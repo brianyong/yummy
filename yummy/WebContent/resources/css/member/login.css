@@ -1,38 +1,39 @@
 @charset "UTF-8";
  a {
-	text-decoration: none; /*링크 밑줄 없애기*/
-	color: white;
+   text-decoration: none; 
+   color: white;
  }
 
  ul {
-     padding-inline-start: 0px;
+   padding-inline-start: 0px;
  }
 .Login_body{
-	text-align: center;
-	list-style: none;
-    margin-left: auto;
-    margin-right: auto;
+   text-align: center;
+   list-style: none;
+   margin-left: auto;
+   margin-right: auto;
 }
 
  .Login_Title {
-	width: 320px; /*밑줄 표시를 위해 div폼의 크기 설정 (width, height)*/
-	height: 45px;
-	display: inline-block;
-	text-align: center;
-	margin-top: 150px;
-    margin-left: auto;
-    margin-right: auto;
-	font-size: 30px;
-	border-bottom: 2px solid #bcbcbc;
+   width: 320px; /*밑줄 표시를 위해 div폼의 크기 설정 (width, height)*/
+   height: 45px;
+   display: inline-block;
+   text-align: center;
+   margin-top: 100px;
+   margin-left: auto;
+   margin-right: auto;
+   font-size: 30px;
+   border-bottom: 2px solid #bcbcbc;
 }
 
 .Login_box {
     display: block;
-    margin-top: 60px;
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom : 100px;
     background-color: white;
-    width:270px;
+    width:370px;
     text-align: center;
     border: 10px solid #F8B03A;
     padding: 20px 20px 20px 20px;
@@ -69,7 +70,7 @@ input[type="radio"] {
     margin-bottom: 50px;
 }
 
-button {
+#btn_login {
     width: 80px;
     height: 37px;
     border:2px solid #263343;
@@ -78,7 +79,7 @@ button {
     margin-bottom:30px;
 }
 
-button:hover {
+#btn_login:hover {
     background-color: #263343;
     color: white;
 }
@@ -86,6 +87,7 @@ button:hover {
 .lost_text {
     font-style:italic;
     font-size: 13px;
+    margin-top: 30px;
 }
 
 .lost_text a {
