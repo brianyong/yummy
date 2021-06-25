@@ -11,13 +11,17 @@
     background-color: #F8B03A ;
     min-height: 70px;
 }
+
 .logo{
-    width: 250px;
+    width: 200px;
+    height: 100px;
 }
+
 #items >li > a{
     color: #ffffff;
     font-size: 18px;
 }
+
 .navbar-light .navbar-toggler{
     border: 0px;
 }
