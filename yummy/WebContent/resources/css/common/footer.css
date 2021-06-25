@@ -1,0 +1,17 @@
+@charset "UTF-8";
+.footer{
+    height: 200px;
+    border-top: 1px solid lightslategray;
+    margin-top: 3%;
+}
+.info, .guide{
+    width: 95%;
+    margin: auto;
+}
+.info > p{
+    font-size: 17px;
+}
+.guide > p{
+    color: lightslategray;
+    font-size: 13px;
+}

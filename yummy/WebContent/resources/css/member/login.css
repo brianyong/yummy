@@ -1,0 +1,101 @@
+@charset "UTF-8";
+ a {
+	text-decoration: none; /*링크 밑줄 없애기*/
+	color: white;
+ }
+
+ ul {
+     padding-inline-start: 0px;
+ }
+.Login_body{
+	text-align: center;
+	list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ .Login_Title {
+	width: 320px; /*밑줄 표시를 위해 div폼의 크기 설정 (width, height)*/
+	height: 45px;
+	display: inline-block;
+	text-align: center;
+	margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+	font-size: 30px;
+	border-bottom: 2px solid #bcbcbc;
+}
+
+.Login_box {
+    display: block;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    width:270px;
+    text-align: center;
+    border: 10px solid #F8B03A;
+    padding: 20px 20px 20px 20px;
+}
+
+.Login_box_li {
+    list-style:none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.guide_text {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    color: gray;
+}
+
+input[type="text"] {
+    width:100%;
+    height:30px;
+    border : none;
+    border-bottom:2px solid gray;
+}
+
+input[type="password"] {
+    width:100%;
+    height:30px;
+    border :none;
+    border-bottom:2px solid gray;
+}
+
+input[type="radio"] {
+    margin-bottom: 50px;
+}
+
+button {
+    width: 80px;
+    height: 37px;
+    border:2px solid #263343;
+    border-radius: 15px;
+    background-color: #F8B03A;
+    margin-bottom:30px;
+}
+
+button:hover {
+    background-color: #263343;
+    color: white;
+}
+
+.lost_text {
+    font-style:italic;
+    font-size: 13px;
+}
+
+.lost_text a {
+    margin-left:10px;
+    border-bottom: 2px solid #F8B03A;
+    color: #F8B03A;
+    font-style: normal
+}
+
+.lost_text a:hover {
+    border-bottom: 2px solid #263343;
+
+}

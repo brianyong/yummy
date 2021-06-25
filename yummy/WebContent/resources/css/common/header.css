@@ -1,0 +1,23 @@
+@charset "UTF-8";
+.container{
+     width: 1200px;
+ }
+       
+.div{
+    box-sizing: border-box;
+}
+       
+.header{
+    background-color: #F8B03A ;
+    min-height: 70px;
+}
+.logo{
+    width: 250px;
+}
+#items >li > a{
+    color: #ffffff;
+    font-size: 18px;
+}
+.navbar-light .navbar-toggler{
+    border: 0px;
+}
