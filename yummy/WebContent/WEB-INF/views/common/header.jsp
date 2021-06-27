@@ -42,7 +42,7 @@
 
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ml-auto" id="items">
-						<li class="nav-item"><a class="nav-link" href="#">공지사항 </a></li>
+						<li class="nav-item"><a class="nav-link" href="${contextPath}/notice/noticeAll">공지사항 </a></li>
 						<li class="nav-item"><a class="nav-link" href="#">리뷰게시판 </a>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="#">자주묻는질문
