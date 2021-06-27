@@ -41,6 +41,7 @@
 				</button>
 
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
 				  <ul class="navbar-nav ml-auto" id="items">
 					<li class="nav-item">
 						<div class="dropdown">
@@ -48,7 +49,7 @@
 							더보기
 							</button>
 							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							<a class="dropdown-item" href="#">공지사항</a>
+							<a class="dropdown-item" href="${contextPath}/notice/noticeAll">공지사항</a>
 							<a class="dropdown-item" href="#">자주묻는질문</a>
 							<a class="dropdown-item" href="#">리뷰게시판</a>
 							</div>
@@ -71,6 +72,7 @@
 						</c:otherwise>
 					</c:choose>
 				  </ul>
+
 				</div>
 			</nav>
 		</form>
