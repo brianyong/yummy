@@ -1,0 +1,59 @@
+
+
+@charset "UTF-8";
+
+.content{
+	width: 80%;
+	margin: auto;
+    height: 800px;
+} 
+
+.sub-top{
+  margin-top: 5%
+}
+
+.sub-top > hr{
+  width: 500px;
+  margin: auto;
+  margin-top:2%
+}
+
+#page-title{
+  text-align: center;
+  margin : auto;
+}
+
+#tbl-box{
+  width: 80%;
+  margin: auto;
+  margin-top: 5%;
+}
+
+.tb-num, .tb-title, .tb-date{
+  text-align: center;
+
+}
+
+.paging-area{
+  margin-top: 5%;
+}
+
+.pagination{
+  justify-content: center;
+}
+.content-btn{
+	width: 90%;
+  text-align: right;
+}
+#btn-register{
+  background-color: #F8B03A;
+  color: white;
+}
+
+.btn > a {
+	color: white !important;
+}
+
+.notice-title{
+	color: black;
+}

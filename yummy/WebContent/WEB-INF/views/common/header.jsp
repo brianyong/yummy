@@ -41,46 +41,38 @@
 				</button>
 
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav ml-auto" id="items">
-						<li class="nav-item"><a class="nav-link" href="#">공지사항 </a></li>
-						<li class="nav-item"><a class="nav-link" href="#">리뷰게시판 </a>
-						</li>
-						<li class="nav-item"><a class="nav-link" href="#">자주묻는질문
-						</a></li>
 
+				  <ul class="navbar-nav ml-auto" id="items">
+					<li class="nav-item">
+						<div class="dropdown">
+							<button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							더보기
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item" href="${contextPath}/notice/noticeAll">공지사항</a>
+							<a class="dropdown-item" href="#">자주묻는질문</a>
+							<a class="dropdown-item" href="#">리뷰게시판</a>
+							</div>
+						</div>
+					</li>
+					
+					<c:choose>
+						<c:when test="${empty loginMember}">
+							<li class="nav-item">
+							  <a class="nav-link" href="${contextPath}/member/login">Login </a>
+							</li>
+							<li class="nav-item">
+							  <a class="nav-link" href="#">회원가입</a>
+							</li>
+						</c:when>
+						<c:otherwise>
+								<li class="nav-item active"><a class="nav-link" href="#">마이페이지</a></li>
+								<li class="nav-item active"><a class="nav-link" href="#">주문내역</a></li>
+								<li class="nav-item active"><a class="nav-link" href="${contextPath}/member/logout">Logout</a></li>
+						</c:otherwise>
+					</c:choose>
+				  </ul>
 
-						<%-- 로그인을 했는지 안했는지 구분하는 방법 == session에 loginMember 유무 확인 --%>
-
-						<c:choose>
-							<%-- 로그인이 되어있지 않을 때
-							empty: 비어있거나 null인 경우 true
-							loginMember: 별도의 scope 설정이 없을 경우 
-								page -> request -> session -> application
-								순서대로 검색하며 loginMember를 찾음
-						 --%>
-							<c:when test="${empty loginMember}">
-								<%-- 로그인 버튼 --%>
-								<%-- Modal 동작 버튼은 data-toggle="modal" 속성과 href 속성값으로 보여질 Modal 영역 id를 작성하면된다. --%>
-								<li class="nav-item"><a class="nav-link"
-									href="${contextPath}/member/login">로그인</a></li>
-								<li class="nav-item"><a class="nav-link" href="#">회원가입</a>
-								</li>
-
-							</c:when>
-
-							<%-- 로그인 되어있을 때 --%>
-							<c:otherwise>
-								<li class="nav-item"><a class="nav-link"
-									href="${contextPath}/member/myPage">${loginMember.memberName}</a>
-								</li>
-								<li class="nav-item"><a class="nav-link"
-									href="${contextPath}/member/logout">로그아웃</a></li>
-
-							</c:otherwise>
-						</c:choose>
-
-
-					</ul>
 				</div>
 			</nav>
 		</form>
