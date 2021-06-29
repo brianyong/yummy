@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.login-status {
+	margin-bottom: 15px;
+	width: 100%;
+	height: 50%;
+	text-align: center;
+	font-size: 30px;
+	padding: 10px;
+}
+
+.login-status2 {
+	padding-top: 20px;
+	width: 100px;
+	height: 100px;
+	background-color: lightgray;
+	text-align: center;
+	font-size: 30px;
+}

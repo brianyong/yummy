@@ -65,7 +65,21 @@
 							</li>
 						</c:when>
 						<c:otherwise>
-								<li class="nav-item active"><a class="nav-link" href="#">마이페이지</a></li>
+								<!-- 등급이 O일 때 -->	
+								<li class="nav-item active">
+								<c:if test="${loginMember.memberGrade == 'O'}">
+								<a class="nav-link" href="${contextPath}/member/ownerMyPage">마이페이지</a>
+								</c:if>
+								
+								<!-- 등급이 G일 때 -->
+								<c:if test="${loginMember.memberGrade == 'G'}">
+								<a class="nav-link" href="${contextPath}/member/myPage">마이페이지</a>
+								</c:if>
+								
+								
+								
+								
+								</li>
 								<li class="nav-item active"><a class="nav-link" href="#">주문내역</a></li>
 								<li class="nav-item active"><a class="nav-link" href="${contextPath}/member/logout">Logout</a></li>
 						</c:otherwise>
