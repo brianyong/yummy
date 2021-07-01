@@ -51,7 +51,7 @@
 							</button>
 							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 							<a class="dropdown-item" href="${contextPath}/notice/noticeAll">공지사항</a>
-							<a class="dropdown-item" href="#">자주묻는질문</a>
+							<a class="dropdown-item" href="${contextPath}/faq/list">자주묻는질문</a>
 							<a class="dropdown-item" href="#">리뷰게시판</a>
 							</div>
 						</div>
