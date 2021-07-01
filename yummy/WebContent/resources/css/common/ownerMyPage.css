@@ -1,0 +1,125 @@
+@charset "UTF-8";
+ .container {
+            width: 1200px;
+        }
+
+        .div {
+            box-sizing: border-box;
+        }
+
+        #search {
+            width: 100%;
+            height: 200px;
+            background-image: url(images/banner.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+
+        .ment {
+            display: inline;
+        }
+
+        .col-sm-8 h3 {
+            text-align: center;
+        }
+
+
+        .input-group {
+            justify-content: center;
+        }
+
+        .input-box {
+            width: 60%;
+            margin: auto;
+            top: 120px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        #input-search {
+            width: 80%;
+            margin-bottom: 0;
+        }
+
+        #button-addon {
+            background-color: #F8B03A;
+            color: white;
+        }
+
+        .header {
+            background-color: #F8B03A;
+            min-height: 80px;
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: white;
+            font-size: 17px;
+        }
+
+        .navbar-light .navbar-toggler {
+            border: 0px;
+        }
+        .btn-search{
+           background-color:  #F8B03A;
+        }
+
+        .input-box {
+            width: 60%;
+            margin: auto;
+            top: 120px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .register {
+            background-color: #F8B03A;
+            color: white;
+        }
+
+        .row4 {
+            width: 50%;
+        }
+
+        .btn-lg {
+            float: right;
+            background-color: #F8B03A ;
+        }
+
+        .footer {
+            width: 100%;
+            height: 20%;
+            border-top: 1px solid lightslategray;
+        }
+
+        .info,
+        .guide {
+            width: 95%;
+            margin: auto;
+        }
+
+        .info>p {
+            font-size: 17px;
+        }
+
+        .guide>p {
+            color: lightslategray;
+            font-size: 13px;
+        }
+
+
+        
+        #storelogo{
+           
+            left : 180px;
+        }
+        #address1{
+            right : 30px; 
+
+
+
+
+        }
