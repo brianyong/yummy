@@ -4,13 +4,10 @@
 	margin-bottom: 20px;
 	width: 350px;
 	height: 180px;
-	vertical-align : middle;
+	text-align: center;
 	font-size: 30px;
 	padding: 10px;
 }
-
-
-
 
 .login-status2 {
 	padding-top: 25px;
@@ -18,8 +15,8 @@
 	height: 100%;
 	background-color: #F8B03A;
 	color: white;
-	font-weight : bold;
-	vertical-align : middle;
+	vertical-align: middle;
+	font-weight: bold;
 	text-align: center;
 	font-size: 25px;
 }

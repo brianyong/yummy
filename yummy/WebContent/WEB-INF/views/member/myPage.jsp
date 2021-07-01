@@ -9,7 +9,8 @@
 
    
  --%>
-
+<!-- header.jsp 동적 include -->
+<jsp:include page="../common/header.jsp" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,21 +23,20 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 	margin: 0;
 }
 </style>
-<link rel="stylesheet" href="${contextPath}/resources/css/common/myPage.css"
-	type="text/css" />
+<link rel="stylesheet"
+	href="${contextPath}/resources/css/common/myPage.css" type="text/css" />
 </head>
 <body>
 
-	<!-- header.jsp 동적 include -->
-	<jsp:include page="../common/header.jsp" />
+
 
 	<!-- search.jsp 동적 include -->
 	<jsp:include page="../common/search.jsp" />
 
 
 	<div class="container">
-	
-	<c:set var="phone" value="${fn:split(loginMember.memberPhone, '-') }" />
+
+		<c:set var="phone" value="${fn:split(loginMember.memberPhone, '-') }" />
 		<div class="row my-5">
 			<div class="col-sm-8">
 				<h3>My Page</h3>
@@ -115,18 +115,22 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 
 				</div>
 			</div><jsp:include page="sideMenu.jsp" />
-			
-			
+
+
 		</div>
 		<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
-	<script>
-		// 검색 단추를 누르면 팝업 레이어가 열리도록 설정한다.
-		$(function() {
-			$("#postcodify_search_button").postcodifyPopUp();
-		});
-	</script>
+		<script>
+			// 검색 단추를 누르면 팝업 레이어가 열리도록 설정한다.
+			$(function() {
+			
+			
+				$("#postcodify_search_button").postcodifyPopUp();
+				
+				
+			});
+		</script>
 	</div>
-	
+
 	<!-- footer.jsp 동적 include -->
 	<jsp:include page="../common/footer.jsp" />
 </body>

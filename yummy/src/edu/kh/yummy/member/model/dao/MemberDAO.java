@@ -30,6 +30,9 @@ public class MemberDAO {
 		String filePath 
 			= MemberDAO.class.getResource("/edu/kh/yummy/sql/member/member-query.xml").getPath();                    
 		
+		
+
+		
 		try {
 			prop = new Properties();
 			
@@ -66,6 +69,7 @@ public class MemberDAO {
 			pstmt.setString(1, memberId);
 			pstmt.setString(2, memberPw);
 			
+			
 			// SQL 구문 수행 후 조회 결과인 ResultSet을 rs 변수에 저장
 			rs = pstmt.executeQuery();
 			
@@ -79,7 +83,14 @@ public class MemberDAO {
 							rs.getString("MEMBER_NM"), 
 							rs.getString("MEMBER_PHONE"), 
 							rs.getString("MEMBER_EMAIL"), 
-							rs.getString("MEMBER_GRADE"));
+							rs.getString("MEMBER_GRADE"),
+							rs.getInt("STORE_NO"),
+							rs.getString("STORE_NM"),
+							rs.getString("STORE_PHONE"),
+							rs.getString("STORE_ADDR"),
+							rs.getString("COR_NO"),
+							rs.getString("STORE_IMG")
+							);
 			}
 			
 		}finally {

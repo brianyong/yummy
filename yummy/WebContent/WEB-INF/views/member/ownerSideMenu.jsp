@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 
 <link rel="stylesheet"
-	href="${contextPath}/resources/css/common/ownerSideMenu.css" type="text/css" />
+	href="${contextPath}/resources/css/common/ownerSideMenu.css"
+	type="text/css" />
 </head>
 <body>
 
@@ -28,6 +29,6 @@
 		</ul>
 	</div>
 	</div>
-	
+
 </body>
 </html>

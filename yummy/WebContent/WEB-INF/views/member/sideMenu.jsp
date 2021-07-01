@@ -11,7 +11,7 @@
 <div class="col-sm-4 mt-5">
 	<div class="login-status">
 		<div class="login-status2">
-			${loginMember.memberName}님 <br> 환영합니다.
+			${loginMember.memberName}님 <br>환영합니다.
 		</div>
 	</div>
 
@@ -24,4 +24,4 @@
 		<li class="list-group-item list-group-item-action"><a
 			href="secession">회원 탈퇴</a></li>
 	</ul>
-		</div>
+</div>

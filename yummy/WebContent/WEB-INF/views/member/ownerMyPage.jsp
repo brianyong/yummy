@@ -9,7 +9,8 @@
 
    
  --%>
-
+<!-- header.jsp 동적 include -->
+	<jsp:include page="../common/header.jsp" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,8 +22,7 @@
 </head>
 <body>
 
-	<!-- header.jsp 동적 include -->
-	<jsp:include page="../common/header.jsp" />
+	
 
 	<!-- search.jsp 동적 include -->
 	<jsp:include page="../common/search.jsp" />
@@ -30,7 +30,9 @@
 
 	<div class="container">
 		<c:set var="phone" value="${fn:split(loginMember.memberPhone, '-') }" />
+		<c:set var="phone" value="${fn:split(loginMember.storePhone, '-') }" />
 		
+		<c:set var="addr" value="${fn:split(loginMember.storeAddress, ',') }" />
 		
 
 
@@ -56,7 +58,8 @@
 						<div class="col-md-0"></div>
 						<div class="col-md-4" id="storelogo">
 							<h5 id="name">
-								<img src="images/logo.png" width="80%" height="80%">
+								<img src="${contextPath}/${store.filePath[0]}${board.fileName[0]}" width="80%" height="80%">
+														
 							</h5>
 						</div>
 					</div>
@@ -78,7 +81,7 @@
 								<h6>상호명</h6>
 							</div>
 							<div class="col-md-5">
-								<h5 id="id"></h5>
+								<h5 id="id">${loginMember.storeName}</h5>
 							</div>
 						</div>
 
@@ -88,7 +91,7 @@
 								<h6>사업자 등록 번호</h6>
 							</div>
 							<div class="col-md-5">
-								<h5 id="name"></h5>
+								<h5 id="name">${loginMember.corNo}</h5>
 							</div>
 						</div>
 
@@ -98,7 +101,7 @@
 								<h6>매장명</h6>
 							</div>
 							<div class="col-md-5">
-								<h5 id="name"></h5>
+								<h5 id="name">${loginMember.memberName}</h5>
 							</div>
 						</div>
 
@@ -111,7 +114,7 @@
 							</div>
 							<div class="col-md-4">
 								<input type="text" name="address"
-									class="form-control postcodify_postcode5">
+									class="form-control postcodify_postcode5" value="${addr[0]} ">
 							</div>
 							<div class="col-md-2">
 								<button type="button" class="btn btn-primary btn-search"
@@ -125,7 +128,7 @@
 							</div>
 							<div class="col-md-5">
 								<input type="text" class="form-control postcodify_address"
-									name="address" id="address1">
+									name="address" id="address1" value="${addr[1]} ">
 							</div>
 						</div>
 
@@ -135,7 +138,7 @@
 							</div>
 							<div class="col-md-5">
 								<input type="text" class="form-control postcodify_details"
-									name="address" id="address2">
+									name="address" id="address2" value="${addr[2]} ">
 							</div>
 						</div>
 
@@ -158,13 +161,13 @@
 							<!-- 매장 전화번호 -->
 							<div class="col-md-2">
 								<input type="number" class="form-control phone" id="phone2"
-									name="phone" value="">
+									name="phone" value="${phone[1]}">
 							</div>
 
 							<!-- 매장 전화번호 -->
 							<div class="col-md-2">
 								<input type="number" class="form-control phone" id="phone3"
-									name="phone" value="">
+									name="phone" value="${phone[2]}">
 							</div>
 						</div>
 						<!-- 이름 -->

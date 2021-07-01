@@ -18,7 +18,8 @@ public class MyPageServlet extends HttpServlet {
   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-	
+		
+		
         String path = "/WEB-INF/views/member/myPage.jsp";
         RequestDispatcher view = request.getRequestDispatcher(path);
         view.forward(request, response);

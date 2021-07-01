@@ -36,6 +36,8 @@ public class LoginServlet extends HttpServlet {
 		// 2. 로그인 요청 시 전달 받은 파라미터를 변수에 저장
 		String memberId = request.getParameter("memberId");
 		String memberPw = request.getParameter("memberPw");
+	
+		
 		
 		try {
 			
@@ -44,6 +46,8 @@ public class LoginServlet extends HttpServlet {
 			
 			// 로그인 요청을 처리할 수 있는 서비스 메소드를 호출하고 로그인 결과를 반환 받음.
 			Member loginMember = service.login(memberId, memberPw);
+			
+			
 			
 			
 			// 세션을 얻어와 변수에 저장

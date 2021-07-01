@@ -51,6 +51,7 @@
 							<a class="dropdown-item" href="#">공지사항</a>
 							<a class="dropdown-item" href="#">자주묻는질문</a>
 							<a class="dropdown-item" href="#">리뷰게시판</a>
+							
 							</div>
 						</div>
 					</li>
@@ -80,7 +81,7 @@
 								
 								
 								</li>
-								<li class="nav-item active"><a class="nav-link" href="#">주문내역</a></li>
+								<li class="nav-item active"><a class="nav-link" href="${contextPath}/member/orderList">주문내역</a></li>
 								<li class="nav-item active"><a class="nav-link" href="${contextPath}/member/logout">Logout</a></li>
 						</c:otherwise>
 					</c:choose>

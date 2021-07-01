@@ -8,6 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+
 
 
 @WebServlet("/member/ownerMyPage")
@@ -18,7 +21,7 @@ public class OwnerMyPageServlet extends HttpServlet {
   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
+	
 	
         String path = "/WEB-INF/views/member/ownerMyPage.jsp";
         RequestDispatcher view = request.getRequestDispatcher(path);
