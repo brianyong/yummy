@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -41,6 +42,7 @@
 				</button>
 
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
 				  <ul class="navbar-nav ml-auto" id="items">
 					<li class="nav-item">
 						<div class="dropdown">
@@ -48,10 +50,9 @@
 							더보기
 							</button>
 							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							<a class="dropdown-item" href="#">공지사항</a>
+							<a class="dropdown-item" href="${contextPath}/notice/noticeAll">공지사항</a>
 							<a class="dropdown-item" href="#">자주묻는질문</a>
 							<a class="dropdown-item" href="#">리뷰게시판</a>
-							
 							</div>
 						</div>
 					</li>
@@ -86,6 +87,7 @@
 						</c:otherwise>
 					</c:choose>
 				  </ul>
+
 				</div>
 			</nav>
 		</form>
