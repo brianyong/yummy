@@ -1,0 +1,32 @@
+@charset "UTF-8";
+ .content{
+   width: 80%;
+   margin: auto;
+ }
+ .sub-top{
+   margin-top: 5%;
+ }
+ .sub-top > hr{
+   width: 500px;
+   margin: auto;
+ }
+ .page-title{
+   text-align: center;
+ }
+ .faq-detail{
+     margin-top: 3%;
+ }
+ .faq-detail th{
+   text-align: center;
+ }
+ .textarea-area{
+   min-height: 400px;
+ }
+ .previous{
+   text-align: right;
+   margin-top: 1%;
+ }
+ #pre-btn{
+   background-color: #F8B03A;
+   color: white;
+ }

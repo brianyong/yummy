@@ -31,7 +31,7 @@
 		<form class="form-signin" method="POST"
 			action="${contextPath}/member/login" on>
 			<nav class="header navbar navbar-expand-lg navbar-light">
-				<a class="navbar-brand" href="#"> <img
+				<a class="navbar-brand" href="${contextPath}"> <img
 					src="${contextPath}/resources/images/logo.png" class="logo">
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -52,7 +52,7 @@
 							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 							<a class="dropdown-item" href="${contextPath}/notice/noticeAll">공지사항</a>
 							<a class="dropdown-item" href="${contextPath}/faq/list">자주묻는질문</a>
-							<a class="dropdown-item" href="#">리뷰게시판</a>
+							<a class="dropdown-item" href="${contextPath}/review/list">리뷰게시판</a>
 							</div>
 						</div>
 					</li>
