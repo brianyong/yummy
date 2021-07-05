@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+    .container{
+        width: 1200px;
+    }
+        
+    .div{
+        box-sizing: border-box;
+    }
+    .content{
+      width: 80%;
+      margin: auto;
+    }
+    .sub-top{
+      margin-top: 5%;
+    }
+    .sub-top > hr{
+      width: 500px;
+      margin: auto;
+    }
+    .page-title{
+      text-align: center;
+    }
+    /* 메뉴 목록 테이블 */
+    #tbl-box{
+      margin: auto;
+      margin-top: 5%;
+    }
+    .tb-num, .tb-title, .tb-date, .tb-price, .tb-nm, .tb-btn{
+      text-align: center;
+    }
+    .plus, .minus{
+      margin: 0;
+      width: 35px;
+    }
+    .register, .updateBtn, .registerBtn, .plus{
+        background-color: #F8B03A; 
+        color: white; 
+    }
+    .minus{
+      background-color: rgb(122, 154, 130); 
+      color: white; 
+
+    }
+    .menu-register{
+      margin-top: 3%;
+      text-align: right;
+    }
+    .deleteBtn{
+        background-color: #EA0000; 
+        color: white; 
+    }
+    /* 슬라이드 되는 폼 */
+    .menu-datail{
+      display: none;
+    }
+    .addForm{
+      border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+    .menu-manage{
+      width: 60%;
+      margin: auto;
+      padding: 1%;
+    }
+    .menu{
+      width: 100%;
+      margin: auto;
+      padding: 1%;
+    }
+    #menuName {
+        width: 50%;
+    }
+    .menuImage{
+      margin-top: 5%;
+    }
+     #update{
+      text-align: right;
+      margin-top: 2%;
+    } 
+    
