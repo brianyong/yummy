@@ -6,7 +6,6 @@ import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
@@ -70,7 +69,6 @@ public class MemberDAO {
 			rs = pstmt.executeQuery();
 
 			// 조회 결과가 있는지 확인 후 있으면 Member 객체를 생성하여 조회된 값을 저장
-			// -> 로그인 결과는 없거나 1행만 있음 -> if문으로 검사
 			if (rs.next()) {
 				// rs.next() : 다음 행에 조회 결과가 있을 경우 다음 행으로 이동
 				loginMember = new Member(rs.getInt("MEMBER_NO"), rs.getString("MEMBER_ID"), rs.getString("MEMBER_NM"),
@@ -87,6 +85,140 @@ public class MemberDAO {
 		// 조회 결과 반환 (조회 성공 시 Member, 실패 시 null 이 반환됨)
 		return loginMember;
 	}
+	
+	
+	/** 회원가입 DAO
+	 * @param conn
+	 * @param member
+	 * @return result
+	 * @throws Exception
+	 */
+	public int signUp(Connection conn, Member member) throws Exception {
+
+	      // 1) 결과 반환용 변수 선언 
+	      int result = 0;
+	      
+	      
+	      try {
+	         // 2) SQL 구문 Properties에서 얻어오기
+	         String sql = prop.getProperty("signUp");
+	         
+	         // 3) PreparedStatement 객체를 생성해서 SQL 세팅
+	         pstmt = conn.prepareStatement(sql);
+	         
+	         // 4) 위치홀더에 알맞은 값 대입
+	         pstmt.setString(1, member.getMemberId());
+	         pstmt.setString(2, member.getMemberPw());
+	         pstmt.setString(3, member.getMemberName());
+	         pstmt.setString(4, member.getMemberPhone());
+	         pstmt.setString(5, member.getMemberEmail());
+	         pstmt.setString(6, member.getMemberGrade());
+	         
+	         // 5) SQL 수행 후 결과 반환 받기
+	         result = pstmt.executeUpdate();
+	         
+	      } finally {
+	    	 // 6) 사용한 JDBC 자원 반환하기
+	         close(pstmt);
+	      }
+	      // 7) 결과를 Service로 반환하기
+	      return result;
+	   }
+	
+	
+	/** 아이디 중복검사 DAO
+	 * @param conn
+	 * @param id
+	 * @return result
+	 * @throws Exception
+	 */
+	public int idDupCheck(Connection conn, String id) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			 String sql = prop.getProperty("idDupCheck");
+			 
+			 pstmt = conn.prepareStatement(sql);
+			 
+			 pstmt.setString(1, id);
+			 
+			 rs = pstmt.executeQuery();
+			 
+			 if(rs.next()) {
+				 result = rs.getInt(1);
+			 }
+		}finally {
+			
+			close(rs);
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+	/** 비밀번호 변경 DAO
+	 * @param conn
+	 * @param currentPwd
+	 * @param newPwd1
+	 * @param memberNo
+	 * @return
+	 * @throws Exception
+	 */
+	public int changePwd(Connection conn, String currentPwd, String newPwd1, int memberNo) throws Exception{
+		
+		int result = 0;
+		
+		String sql = prop.getProperty("changePwd");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, newPwd1);
+			pstmt.setString(2, currentPwd);
+			pstmt.setInt(3, memberNo);
+			
+			result = pstmt.executeUpdate();
+			
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+	
+	/** 회원 탈퇴 DAO
+	 * @param conn
+	 * @param currentPwd
+	 * @param memberNo 
+	 * @return result
+	 * @throws Exception
+	 */
+	public int secession(Connection conn, String currentPwd, int memberNo) throws Exception{
+		int result = 0;
+		
+		String sql = prop.getProperty("secession");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, memberNo);
+			pstmt.setString(2, currentPwd);
+			
+			result = pstmt.executeUpdate();
+			
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+	
 
 	/**
 	 * StoreInfo 조회 DAO

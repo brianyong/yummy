@@ -3,17 +3,12 @@ package edu.kh.yummy.member.model.service;
 import static edu.kh.yummy.common.JDBCTemplate.*;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 
 import edu.kh.yummy.store.model.vo.Store;
 import edu.kh.yummy.member.model.dao.MemberDAO;
 import edu.kh.yummy.member.model.vo.Member;
 
 // Service : 비즈니스 로직 처리(데이터 가공, 트랜잭션 처리)
-/**
- * @author yong's
- *
- */
 public class MemberService {
 
 	private MemberDAO dao = new MemberDAO();
@@ -40,6 +35,96 @@ public class MemberService {
 		// 서비스 수행 결과 반환
 		return loginMember;
 	}
+	
+	
+	/** 회원가입 Service
+	 * @param member
+	 * @return result
+	 * @throws Exception
+	 */
+	public int signUp(Member member) throws Exception{
+	      
+		  // 1) 커넥션 얻어오기
+	      Connection conn = getConnection();
+	      
+	      // 2) DAO 호출해서 insert 진행 후 결과 반환받기
+	      int result = dao.signUp(conn, member);
+	      
+	      // 3) 반환 받은 결과에 따라 트랜잭션 처리하기
+	      if(result > 0) {
+	         commit(conn);
+	      }else {
+	         rollback(conn);
+	      }
+	      
+	      // 4) 사용한 커넥션 반환하기
+	      close(conn);
+	      
+	      // 5) 결과를 Controller로 반환하기
+	      return result;
+	      
+	   }
+	
+	
+	/** 아이디 중복검사 Service
+	 * @param id
+	 * @return result
+	 * @throws Exception
+	 */
+	public int idDupCheck(String id) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.idDupCheck(conn, id);
+		
+		close(conn);
+		
+		return result;
+	}
+	
+	
+	/** 비밀번호 변경 Service
+	 * @param currentPwd
+	 * @param newPwd1
+	 * @param memberNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int changePwd(String currentPwd, String newPwd1, int memberNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.changePwd(conn, currentPwd, newPwd1, memberNo);
+		
+		if(result > 0) 	commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+	
+	
+	/** 회원 탈퇴 Service
+	 * @param currentPwd
+	 * @param memberNo 
+	 * @return result
+	 * @throws Exception
+	 */
+	public int secession(String currentPwd, int memberNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.secession(conn, currentPwd, memberNo);
+		
+		if(result > 0) 	commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+	
 
 	/**
 	 * 가게정보 조회Service

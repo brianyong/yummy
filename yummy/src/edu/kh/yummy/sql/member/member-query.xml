@@ -4,40 +4,73 @@
 
 	<!-- 로그인 SQL -->
 	<entry key="login">
-				
-		SELECT MEMBER_NO, MEMBER_ID, MEMBER_NM, MEMBER_PHONE, MEMBER_EMAIL, MEMBER_GRADE
-		FROM MEMBER 
+		SELECT MEMBER_NO, MEMBER_ID, MEMBER_NM, MEMBER_PHONE,
+		MEMBER_EMAIL, MEMBER_GRADE
+		FROM MEMBER
 		WHERE MEMBER_ID = ?
 		AND MEMBER_PW = ?
 		AND MEMBER_STATUS = 'Y'
-		
+	</entry>
+
+	<!-- 회원 가입 SQL -->
+	<entry key="signUp">
+		INSERT INTO MEMBER
+		VALUES(SEQ_MNO.NEXTVAL, ?, ?, ?, ?, ?, DEFAULT, ?)
+	</entry>
+
+	<!-- 중복 검사 SQL -->
+	<entry key="idDupCheck">
+		SELECT COUNT(*) FROM MEMBER
+		WHERE MEMBER_STATUS = 'Y'
+		AND MEMBER_ID = ?
 	</entry>
 	
+	<!-- 비밀번호 변경 SQL -->
+	<entry key="changePwd">
+		UPDATE MEMBER SET
+		MEMBER_PW = ?
+		WHERE MEMBER_PW = ?
+		AND MEMBER_NO = ?
+	</entry>
+	
+	<!-- 회원 탈퇴 SQL -->
+	<entry key="secession">
+		UPDATE MEMBER SET
+		MEMBER_STATUS = 'N'
+		WHERE MEMBER_NO = ?
+		AND MEMBER_PW = ?
+	</entry>
+
 	<!-- 가게 정보 조회 -->
 	<entry key="storeInfo">
-				
+
 		SELECT STORE_NO, STORE_NM, STORE_PHONE, STORE_ADDR, STORE_IMG, COR_NO
-		FROM STORE 
+		FROM
+		STORE
 		WHERE MEMBER_NO = ?
 		AND STORE_STATUS = 'Y'
-		
+
+	</entry>
+
+	<!-- 회원 정보 수정 -->
+	<entry key="memberUpdate">
+		UPDATE MEMBER SET MEMBER_PHONE= ? ,
+		MEMBER_EMAIL = ?
+		WHERE MEMBER_NO= ?
 	</entry>
 	
-
-
-<!-- 회원 정보 수정  -->
-<entry key="memberUpdate">
-UPDATE MEMBER SET MEMBER_PHONE= ? ,	
-			MEMBER_EMAIL = ?
-			WHERE MEMBER_NO= ?
-</entry>
-	<!-- 점주 정보 수정  -->
-<entry key="ownerUpdate">
-UPDATE STORE SET STORE_PHONE= ? ,	
-			STORE_ADDR = ?
-			WHERE MEMBER_NO= ?
-</entry>
-
 	
+	<!-- 점주 정보 수정 -->
+	<entry key="ownerUpdate">
+		UPDATE STORE SET STORE_PHONE= ? ,
+		STORE_ADDR = ?
+		WHERE MEMBER_NO= ?
+	</entry>
+
 
 </properties>
+
+
+
+
+
