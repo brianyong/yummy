@@ -88,7 +88,7 @@
 								
 								
 								</li>
-								<li class="nav-item active"><a class="nav-link" href="${contextPath}/member/orderList">주문내역</a></li>
+								<li class="nav-item active"><a class="nav-link" href="${contextPath}/order/orderList">주문내역</a></li>
 								<li class="nav-item active"><a class="nav-link" href="${contextPath}/member/logout">Logout</a></li>
 						</c:otherwise>
 					</c:choose>
