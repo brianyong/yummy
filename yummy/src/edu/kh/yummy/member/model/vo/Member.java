@@ -36,8 +36,19 @@ public class Member {
       this.memberPhone = memberPhone;
       this.memberEmail = memberEmail;
    }
+   
 
-   public int getMemberNo() {
+	public Member( String memberName, String memberId, String memberPw, String memberPhone, String memberEmail, String memberGrade) {
+		super();
+		this.memberName = memberName;
+		this.memberId = memberId;
+		this.memberPw = memberPw;
+		this.memberPhone = memberPhone;
+		this.memberEmail = memberEmail;
+		this.memberGrade = memberGrade;
+	}
+
+public int getMemberNo() {
       return memberNo;
    }
 

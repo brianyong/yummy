@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -60,10 +59,10 @@
 					<c:choose>
 						<c:when test="${empty loginMember}">
 							<li class="nav-item">
-							  <a class="nav-link" href="${contextPath}/member/login">Login </a>
+							  <a class="nav-link" href="${contextPath}/member/login">로그인 </a>
 							</li>
 							<li class="nav-item">
-							  <a class="nav-link" href="#">회원가입</a>
+							  <a class="nav-link" href="${contextPath}/member/start_signUp">회원가입</a>
 							</li>
 						</c:when>
 						<c:otherwise>
@@ -88,8 +87,8 @@
 								
 								
 								</li>
-								<li class="nav-item active"><a class="nav-link" href="${contextPath}/order/orderList">주문내역</a></li>
-								<li class="nav-item active"><a class="nav-link" href="${contextPath}/member/logout">Logout</a></li>
+								<li class="nav-item active"><a class="nav-link" href="${contextPath}/member/orderList">주문내역</a></li>
+								<li class="nav-item active"><a class="nav-link" href="${contextPath}/member/logout">로그아웃</a></li>
 						</c:otherwise>
 					</c:choose>
 				  </ul>

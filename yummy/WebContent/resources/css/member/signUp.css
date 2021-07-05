@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+/* number 태그 화살표 제거 */
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button
+	{
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+img{
+	width: 40px;
+	height: 40px;
+}
+
+#btn_sign {
+    border:2px solid #263343;
+    border-radius: 15px;
+    background-color: #F8B03A;
+}
+
+#btn_sign:hover {
+    background-color: #263343;
+    color: white;
+}
+
+hr{
+	width: 60%;
+}
+
+.hr_Title1{
+	width: 40%;
+}
+
+.TOS_Content{
+	padding-left: 25%;
+}
+
+/* Important part */
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    height: 100%;
+    overflow-y: auto;
+}
+
