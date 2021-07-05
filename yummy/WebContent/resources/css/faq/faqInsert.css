@@ -1,0 +1,27 @@
+@charset "UTF-8";
+  .content{
+    width: 80%;
+    margin: auto;
+  }
+  .sub-top{
+    margin-top: 5%;
+  }
+  .sub-top > hr{
+    width: 500px;
+    margin: auto;
+    
+  }
+  .page-title{
+    text-align: center;
+  }
+  .content-input{
+    margin-top: 3%;
+  }
+  .content-btn{
+    text-align: right;
+  }
+
+  #register{
+    background-color: #F8B03A;
+    color: white;
+  }
