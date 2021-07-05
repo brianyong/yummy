@@ -1,0 +1,53 @@
+@charset "UTF-8";
+    .container{
+        width: 1200px;
+    }
+    .div{
+    box-sizing: border-box;
+    }
+    .sub-top{
+      margin-top: 5%;
+    }
+    .sub-top > hr{
+      width: 500px;
+      margin: auto;
+    }
+    .page-title{
+      text-align: center;
+    }
+    .menu-datail{
+      display: none;
+    }
+    .addForm{
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      width: 50%;
+      margin: auto;
+      margin-top: 5%;
+    }
+    .menu-manage{
+      width: 60%;
+      margin: auto;
+      padding: 1%;
+    }
+    .menu{
+      width: 100%;
+      margin: auto;
+      padding: 1%;
+    }
+    #menuName {
+      width: 50%;
+    }
+    #menuPrice, #menuSalePercent, #menuCount {
+        width: 30%;
+    }
+    .menuImage{
+      margin-top: 10%;
+    }
+    .registerBtn{
+        background-color: #F8B03A;
+        color: white;
+    }
+    #menu-register{
+        text-align: right;
+        margin-top: 2%;
+    }
