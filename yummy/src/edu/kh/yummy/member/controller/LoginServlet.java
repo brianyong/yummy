@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import edu.kh.yummy.category.model.vo.Store;
 import edu.kh.yummy.member.model.service.MemberService;
 import edu.kh.yummy.member.model.vo.Member;
 
@@ -46,6 +47,7 @@ public class LoginServlet extends HttpServlet {
 			
 			// 로그인 요청을 처리할 수 있는 서비스 메소드를 호출하고 로그인 결과를 반환 받음.
 			Member loginMember = service.login(memberId, memberPw);
+			
 			
 			
 			

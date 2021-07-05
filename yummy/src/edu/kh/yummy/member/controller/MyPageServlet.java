@@ -8,6 +8,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import edu.kh.yummy.category.model.vo.Store;
+import edu.kh.yummy.member.model.service.MemberService;
+import edu.kh.yummy.member.model.vo.Member;
 
 
 @WebServlet("/member/myPage")
@@ -19,12 +24,16 @@ public class MyPageServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		
+	
 		
-        String path = "/WEB-INF/views/member/myPage.jsp";
-        RequestDispatcher view = request.getRequestDispatcher(path);
-        view.forward(request, response);
 		
-	}
+			
+			String path = "/WEB-INF/views/member/myPage.jsp";
+			RequestDispatcher view = request.getRequestDispatcher(path);
+			view.forward(request, response);
+			
+	
+}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
