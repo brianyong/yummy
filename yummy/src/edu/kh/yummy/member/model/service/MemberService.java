@@ -5,7 +5,7 @@ import static edu.kh.yummy.common.JDBCTemplate.*;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import edu.kh.yummy.store.vo.Store;
+import edu.kh.yummy.store.model.vo.Store;
 import edu.kh.yummy.member.model.dao.MemberDAO;
 import edu.kh.yummy.member.model.vo.Member;
 

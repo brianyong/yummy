@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+
+	<entry key="storeView">
+		SELECT STORE_NO, STORE_NM, STORE_IMG,CATEGORY_NO,
+		( SELECT COUNT(*) FROM STOREGOOD B
+		WHERE A.STORE_NO = B.STORE_NO) CNT
+		FROM STORE A
+		WHERE CATEGORY_NO = ?
+		AND STORE_STATUS = 'Y'
+	</entry>
+
+</properties>

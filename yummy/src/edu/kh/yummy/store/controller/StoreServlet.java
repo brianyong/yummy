@@ -1,4 +1,4 @@
-package edu.kh.yummy.member.controller;
+package edu.kh.yummy.store.controller;
 
 import java.io.IOException;
 
@@ -8,36 +8,26 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import edu.kh.yummy.store.model.vo.Store;
-import edu.kh.yummy.member.model.service.MemberService;
-import edu.kh.yummy.member.model.vo.Member;
-
-
-@WebServlet("/member/myPage")
-public class MyPageServlet extends HttpServlet {
+@WebServlet("/store/store")
+public class StoreServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-  
-  
+    public StoreServlet() {
+        super();
+    }
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		
-	
-		
-		
-			
-			String path = "/WEB-INF/views/member/myPage.jsp";
-			RequestDispatcher view = request.getRequestDispatcher(path);
-			view.forward(request, response);
-			
-	
-}
+		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/store/store.jsp");
+	      
+	      view.forward(request, response);
+	      
+	      request.setCharacterEncoding("UTF-8");
+	      
+	}
 
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		doGet(request, response);
 	}
 
