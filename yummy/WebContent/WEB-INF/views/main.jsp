@@ -49,7 +49,7 @@
             <div class="row">
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <a href="${contextPath}/category/category" class="category-list">
-                        <img src="${contextPath}/resources/images/cate.jpg">
+                        <img src="${contextPath}/resources/images/main/mainTotal.png">
                     </a>
                 </div>
 
