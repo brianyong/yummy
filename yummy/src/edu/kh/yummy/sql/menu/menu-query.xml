@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+
+<!-- 메뉴 정보 조회 sql -->
+
+	<entry key="selectMenuList">
+	SELECT * FROM MENU_LIST
+	WHERE MEMBER_NO = ?
+	AND MENU_STATUS = 'Y'
+	</entry>
+
+
+<!-- 메뉴 수정 sql -->
+	<entry key="updateMenu">
+	UPDATE MENU SET 
+	MENU_NM = ?,
+	MENU_PRICE = ?,
+	MENU_SALE = ?,
+	MENU_IMG = ?
+	WHERE MENU_NO = ?
+	</entry>
+	
+<!-- 메뉴 삭제 sql -->
+	<entry key="deleteMenu">
+	UPDATE MENU SET
+	MENU_STATUS = 'N'
+	WHERE MENU_NO = ?
+</entry>
+
+<!-- 메뉴 등록 sql -->
+<entry key="insertMenu">
+INSERT INTO MENU
+VALUES(SEQ_SNO.NEXTVAL, ?, ?, ?, ? , (SELECT STORE_NO FROM STORE
+                                                    JOIN MEMBER USING(MEMBER_NO)
+                                                    WHERE MEMBER_NO = ?),  DEFAULT)
+</entry>
+
+</properties>

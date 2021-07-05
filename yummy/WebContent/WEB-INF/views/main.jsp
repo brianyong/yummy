@@ -23,22 +23,22 @@
             <div class="row">
                 <div class="col-sm-6 col-md-3">
                     <a href="" class="sale-item">
-                        <img src="${contextPath}/resources/images/sale.jpg">
+                        <img src="${contextPath}/resources/images/main/guljack.jpg">
                     </a>
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <a href="" class="sale-item">
-                        <img src="${contextPath}/resources/images/sale.jpg">
+                        <img src="${contextPath}/resources/images/main/angel.jpg">
                     </a>
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <a href="" class="sale-item">
-                        <img src="${contextPath}/resources/images/sale.jpg">
+                        <img src="${contextPath}/resources/images/main/domino.jpg">
                     </a>
                 </div> 
                 <div class="col-sm-6 col-md-3">
                     <a href="" class="sale-item">
-                        <img src="${contextPath}/resources/images/sale.jpg">
+                        <img src="${contextPath}/resources/images/main/ddorae.jpg">
                     </a>
                 </div>  
             </div>
@@ -48,50 +48,50 @@
         <div class="category">
             <div class="row">
                 <div class="col-xs-6 col-sm-4 col-md-3">
-                    <a href="" class="category-list">
+                    <a href="${contextPath}/category/category" class="category-list">
                         <img src="${contextPath}/resources/images/cate.jpg">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <a href="" class="category-list">
-                        <img src="${contextPath}/resources/images/cate.jpg">
+                        <img src="${contextPath}/resources/images/main/mainHansick.png">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <a href="" class="category-list">
-                        <img src="${contextPath}/resources/images/cate.jpg">
+                        <img src="${contextPath}/resources/images/main/mainEnglish.png">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <a href="" class="category-list">
-                        <img src="${contextPath}/resources/images/cate.jpg">
+                        <img src="${contextPath}/resources/images/main/mainChina.png">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <a href="" class="category-list">
-                        <img src="${contextPath}/resources/images/cate.jpg">
+                        <img src="${contextPath}/resources/images/main/mainJapan.png">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <a href="" class="category-list">
-                        <img src="${contextPath}/resources/images/cate.jpg">
+                        <img src="${contextPath}/resources/images/main/mainChicken.png">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <a href="" class="category-list">
-                        <img src="${contextPath}/resources/images/cate.jpg">
+                        <img src="${contextPath}/resources/images/main/mainNight.png">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <a href="" class="category-list">
-                        <img src="${contextPath}/resources/images/cate.jpg">
+                        <img src="${contextPath}/resources/images/main/mainCafe.png">
                     </a>
                 </div>
             </div>

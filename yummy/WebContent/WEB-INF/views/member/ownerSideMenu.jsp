@@ -21,7 +21,9 @@
 
 		<ul class="list-group">
 			<li class="list-group-item list-group-item-action"><a
-				href="myPage">메뉴 수정</a></li>
+				href="${contextPath}/menu/menuList">메뉴 관리</a></li>
+      <li class="list-group-item list-group-item-action"><a
+         href="${contextPath}/menu/insertForm">메뉴 등록</a></li>
 			<li class="list-group-item list-group-item-action"><a
 				href="changePwd">비밀번호 변경</a></li>
 			<li class="list-group-item list-group-item-action"><a

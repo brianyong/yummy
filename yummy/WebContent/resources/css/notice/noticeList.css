@@ -24,14 +24,13 @@
 }
 
 #tbl-box{
-  width: 80%;
+  width: 100%; !important;
   margin: auto;
   margin-top: 5%;
 }
 
 .tb-num, .tb-title, .tb-date{
   text-align: center;
-
 }
 
 .paging-area{
@@ -42,17 +41,19 @@
   justify-content: center;
 }
 .content-btn{
-	width: 90%;
+  margin-top : 3%; !important;
+  width: 100%; !important;
   text-align: right;
 }
+
 #btn-register{
-  background-color: #F8B03A;
-  color: white;
+  background-color: #F8B03A; 
+  color: white; 
 }
 
-.btn > a {
+/* .btn {
 	color: white !important;
-}
+} */
 
 .notice-title{
 	color: black;
