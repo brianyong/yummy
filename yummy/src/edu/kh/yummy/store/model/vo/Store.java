@@ -1,4 +1,4 @@
-package edu.kh.yummy.store.vo;
+package edu.kh.yummy.store.model.vo;
 
 import java.sql.Date;
 
