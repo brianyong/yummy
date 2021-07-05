@@ -78,6 +78,12 @@
 								<a class="nav-link" href="${contextPath}/member/myPage">마이페이지</a>
 								</c:if>
 								
+								<!-- 등급이 A일 때 -->
+								<li class="nav-item active">
+								<c:if test="${loginMember.memberGrade == 'A'}">
+								<a class="nav-link" href="${contextPath}/member/myPage">마이페이지</a>
+								</c:if>
+								</li>
 								
 								
 								

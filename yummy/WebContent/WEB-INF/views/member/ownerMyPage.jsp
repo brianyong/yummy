@@ -29,13 +29,16 @@
 
 
 	<div class="container">
-		<c:set var="phone" value="${fn:split(loginMember.memberPhone, '-') }" />
-		<c:set var="phone" value="${fn:split(loginMember.storePhone, '-') }" />
-		
-		<c:set var="addr" value="${fn:split(loginMember.storeAddress, ',') }" />
-		
-
-
+		 <c:set var="phone"  
+            value="${fn:split( loginMember.memberPhone, '-' ) }"/>
+            
+            <c:set var="storePhone"  
+            value="${fn:split( storeInfo.storePhone, '-' ) }"/>
+            
+             <c:set var="addr" 
+            value="${fn:split( storeInfo.storeAddr, ',' ) }"/>
+            
+            
 
 
 
@@ -58,7 +61,7 @@
 						<div class="col-md-0"></div>
 						<div class="col-md-4" id="storelogo">
 							<h5 id="name">
-								<img src="${contextPath}/${store.filePath[0]}${board.fileName[0]}" width="80%" height="80%">
+								<img src="" width="80%" height="80%">
 														
 							</h5>
 						</div>
@@ -72,7 +75,7 @@
 
 
 
-					<form method="POST" action="update"
+					<form method="POST" action="ownerupdate"
 						onsubmit="return memberUpdateValidate();" class="form-horizontal"
 						role="form">
 						<!-- 상호명 -->
@@ -81,7 +84,7 @@
 								<h6>상호명</h6>
 							</div>
 							<div class="col-md-5">
-								<h5 id="id">${loginMember.storeName}</h5>
+								<h5 id="id">${storeInfo.storeName}</h5>
 							</div>
 						</div>
 
@@ -91,19 +94,11 @@
 								<h6>사업자 등록 번호</h6>
 							</div>
 							<div class="col-md-5">
-								<h5 id="name">${loginMember.corNo}</h5>
+								<h5 id="name">${storeInfo.corNo}</h5>
 							</div>
 						</div>
 
-						<!-- 매장명 -->
-						<div class="row mb-3 form-row">
-							<div class="col-md-2">
-								<h6>매장명</h6>
-							</div>
-							<div class="col-md-5">
-								<h5 id="name">${loginMember.memberName}</h5>
-							</div>
-						</div>
+						
 
 						<!-- 주소 -->
 						<!-- 오픈소스 도로명 주소 API -->
@@ -113,8 +108,8 @@
 								<label for="postcodify_search_button">매장주소</label>
 							</div>
 							<div class="col-md-4">
-								<input type="text" name="address"
-									class="form-control postcodify_postcode5" value="${addr[0]} ">
+								<input type="text" name="storeAddr"
+									class="form-control postcodify_postcode5" value="${addr[0]}">
 							</div>
 							<div class="col-md-2">
 								<button type="button" class="btn btn-primary btn-search"
@@ -128,7 +123,7 @@
 							</div>
 							<div class="col-md-5">
 								<input type="text" class="form-control postcodify_address"
-									name="address" id="address1" value="${addr[1]} ">
+									name="storeAddr" id="address1" value="${addr[1]}">
 							</div>
 						</div>
 
@@ -138,7 +133,7 @@
 							</div>
 							<div class="col-md-5">
 								<input type="text" class="form-control postcodify_details"
-									name="address" id="address2" value="${addr[2]} ">
+									name="storeAddr" id="address2" value="${addr[2]}">
 							</div>
 						</div>
 
@@ -146,11 +141,11 @@
 						<!-- 매장 전화번호 -->
 						<div class="row mb-3 form-row">
 							<div class="col-md-2">
-								<label for="phone1">매장 전화번호</label>
+								<label for="storePhone1">매장 전화번호</label>
 							</div>
 							<!-- 매장 전화번호 -->
 							<div class="col-md-1">
-								<select class="custom-select" id="phone1" name="phone">
+								<select class="custom-select" id="storePhone1" name="storePhone">
 									<option>02</option>
 									<option>031</option>
 
@@ -160,16 +155,28 @@
 
 							<!-- 매장 전화번호 -->
 							<div class="col-md-2">
-								<input type="number" class="form-control phone" id="phone2"
-									name="phone" value="${phone[1]}">
+								<input type="number" class="form-control phone" id="storePhone2"
+									name="storePhone" value="${storePhone[1]}">
 							</div>
 
 							<!-- 매장 전화번호 -->
 							<div class="col-md-2">
-								<input type="number" class="form-control phone" id="phone3"
-									name="phone" value="${phone[2]}">
+								<input type="number" class="form-control phone" id="storePhone3"
+									name="storePhone" value="${fn:trim(storePhone[2])}">
 							</div>
 						</div>
+						
+						
+						<!-- 매장명 -->
+						<div class="row mb-3 form-row">
+							<div class="col-md-2">
+								<h6>아이디</h6>
+							</div>
+							<div class="col-md-5">
+								<h5 id="name">${loginMember.memberId}</h5>
+							</div>
+						</div>
+						
 						<!-- 이름 -->
 						<div class="row mb-3 form-row">
 							<div class="col-md-2">

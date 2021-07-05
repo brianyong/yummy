@@ -1,0 +1,146 @@
+@charset "UTF-8";
+    
+        
+        h3{
+            text-align: center;
+        }
+
+        .div {
+
+            box-sizing: border-box;
+
+        }
+
+        .btn {
+            background-color: #F8B03A;
+        }
+
+        #detailOpen {
+            width: 100%;
+            height: 100%;
+            padding: 0px;
+            margin: 0;
+        }
+
+        .container1 {
+            width: 1200px;
+           margin: auto;
+
+        }
+
+        .orderDetail1 {
+            width: 80%;
+            /* height: 35%; */
+            margin: auto;
+
+
+        }
+        .menuDetail1-1{
+            width: 80%;
+            float : left;
+            height : 100%;
+          
+        }
+        .menuDetail1-2{
+            width : 20%;
+            float : left;
+            height : 100%;
+            
+        
+        }
+
+        .orderPreview1 {
+            width: 100%;
+            /* height: 20%; */
+            height: 70px;
+            border: 1px solid black;
+        }
+
+        #orderDate1 {
+            width: 10%;
+            height: 100%;
+            float: left;
+            border: 1px solid black;
+
+        }
+
+        #brandImg1 {
+            width: 20%;
+            height: 100%;
+            float: left;
+            border: 1px solid black;
+        }
+
+        #location1 {
+            width: 45%;
+            height: 100%;
+            float: left;
+            border: 1px solid black;
+        }
+
+        #totalprice1 {
+            width: 20%;
+            height: 100%;
+            float: left;
+
+        }
+
+        #orderListText {
+            height: 10%;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .menuList1 {
+            height: 50%;
+            width: 100%;
+          
+        }
+
+        .menuDetail1 {
+            width: 70%;
+            height: 100%;
+            float: left;
+            border: 1px solid black;
+        }
+
+        .menuPrice1 {
+            width: 29%;
+            height: 100%;
+            text-align: right;
+            float: left;
+            border: 1px solid black;
+        }
+
+        .lastPrice1 {
+            width: 100%;
+            height: 20%;
+            
+            
+
+        }
+
+        #lastPriceText1 {
+            width: 70%;
+            height: 100%;
+            text-align: left;
+            float: left;
+            border: 1px solid black;
+        }
+
+        #lastTotalPrice1 {
+            width: 29%;
+            height: 100%;
+            float: left;
+            text-align: right;
+            border: 1px solid black;
+
+        }
+
+
+       
+
+        .collapseExample-body {
+            /* height : 80%; */
+            height: 280px;
+        }

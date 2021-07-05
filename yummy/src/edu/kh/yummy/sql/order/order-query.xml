@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+	<!-- 오더 정보  SQL -->
+	<entry key="orderInfo">
+		SELECT ORDER_NO, ORDER_DATE, ORDER_REQUEST, ORDER_VISIT_TIME
+		FROM PLACEORDER
+		WHERE MEMBER_NO = ?
+	</entry>
+
+
+
+
+</properties>

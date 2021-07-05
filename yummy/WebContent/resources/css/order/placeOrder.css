@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+    .container {
+            width: 1200px;
+        }
+
+        .sub-top {
+            margin-top: 5%;
+        }
+
+        .sub-top>hr {
+            width: 500px;
+            margin: auto;
+        }
+
+        .page-title {
+            text-align: center;
+            margin: auto;
+        }
+
+        .orderForm {
+            margin-top: 5%;
+        }
+
+        #visitTime,
+        #orderPhone,
+        #orderStoreName {
+            width: 30%;
+        }
+
+        #orderStoreLocation {
+            width: 60%;
+        }
+
+        #storeNumber {
+            display: none;
+        }
+
+        .orderContent>th,
+        .orderMenuName,
+        .orderMenuAmount,
+        .orderMenuPrice,
+        .allPrice>td {
+            text-align: center;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: 550;
+        }
+
+        .warning {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .warning>p {
+            color: red;
+        }
+
+        .warning>p:first-child {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .btnGroup {
+            text-align: center;
+        }
+
+        #orderBtn {
+            background-color: #F8B03A;
+            color: white;
+            border: 1px solid #F8B03A;
+        }
