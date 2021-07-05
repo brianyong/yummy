@@ -12,6 +12,7 @@ public class Member {
    private String memberEmail;      // 이메일
    private String memberStatus;   // 회원 상태(Y:정상, N:탈퇴)
    private String memberGrade;      // 회원 등급(G:일반, O:점주, A:관리자)
+   private int storeNo;
    
    public Member() {}
    
@@ -99,8 +100,18 @@ public class Member {
    public void setMemberGrade(String memberGrade) {
       this.memberGrade = memberGrade;
    }
+   
+   
 
-   @Override
+   public int getStoreNo() {
+	return storeNo;
+}
+
+public void setStoreNo(int storeNo) {
+	this.storeNo = storeNo;
+}
+
+@Override
    public String toString() {
       return "Member [memberNo=" + memberNo + ", memberId=" + memberId + ", memberPw=" + memberPw + ", memberName="
             + memberName + ", memberPhone=" + memberPhone + ", memberEmail=" + memberEmail + ", memberStatus="
