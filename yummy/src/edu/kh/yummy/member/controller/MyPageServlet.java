@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import edu.kh.yummy.category.model.vo.Store;
+import edu.kh.yummy.store.vo.Store;
 import edu.kh.yummy.member.model.service.MemberService;
 import edu.kh.yummy.member.model.vo.Member;
 

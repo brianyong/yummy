@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
-import edu.kh.yummy.category.model.vo.Store;
+import edu.kh.yummy.store.vo.Store;
 import edu.kh.yummy.member.model.vo.Member;
 
 // DAO(Data Access Object) : DB 연결 객체
