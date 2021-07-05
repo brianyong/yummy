@@ -1,6 +1,5 @@
 package edu.kh.yummy.store.model.vo;
 
-import java.sql.Date;
 
 public class Store {
 	private int storeNo; // 매장 번호
@@ -8,8 +7,8 @@ public class Store {
 	private String storePhone; // 매장 전화번호
 	private String storeAddr; // 매장 주소
 	private String storeImg; // 매장 대표 이미지
-	private Date storeOpen; // 매장 오픈시간
-	private Date storeClose; // 매장 클로즈시간
+	private String storeOpen; // 매장 오픈시간
+	private String storeClose; // 매장 클로즈시간
 	private String storeStory; // 매장 설명
 	private String storeStatus; // 매장 승인상태 (정상 : Y, 승인 전 : N)
 	private String corNo; // 사업자 등록번호
@@ -72,19 +71,19 @@ public class Store {
 		this.storeImg = storeImg;
 	}
 
-	public Date getStoreOpen() {
+	public String getStoreOpen() {
 		return storeOpen;
 	}
 
-	public void setStoreOpen(Date storeOpen) {
+	public void setStoreOpen(String storeOpen) {
 		this.storeOpen = storeOpen;
 	}
 
-	public Date getStoreClose() {
+	public String getStoreClose() {
 		return storeClose;
 	}
 
-	public void setStoreClose(Date storeClose) {
+	public void setStoreClose(String storeClose) {
 		this.storeClose = storeClose;
 	}
 
@@ -143,5 +142,9 @@ public class Store {
 				+ ", storeStory=" + storeStory + ", storeStatus=" + storeStatus + ", corNo=" + corNo + ", corNoImg="
 				+ corNoImg + ", categoryNo=" + categoryNo + ", memberNo=" + memberNo + "]";
 	}
+	
+	
+
+	
 
 }
