@@ -1,0 +1,65 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>faq 등록</title>
+<link rel="stylesheet" href="${contextPath}/resources/css/faq/faqInsert.css" type="text/css"/>
+</head>
+<body>
+	<!-- header.jsp 동적 include -->
+	<jsp:include page="../common/header.jsp"/>
+	
+	<!-- search.jsp 동적 include -->
+	<jsp:include page="../common/search.jsp"/>
+	
+	
+	<div class="container">
+	    <div class="content">
+	      <div class="sub-top">
+	          <h3 class="page-title"> 자주묻는질문 등록</h3>
+	          <br>
+	          <hr>
+	      </div>
+	      <form class="content-input" action="${contextPath}/faq2/insertFaq" method="POST" onsubmit="return faqValidate();">
+	          <div class="mb-3">
+	              <!-- <label for="faqTitleInput" class="form-label"> 제목</label> -->
+	              <input type="text" class="form-control" name="faqTitle" id="faqTitleInput" placeholder="제목 입력" required>
+	          </div>
+	          <div class="mb-3">
+	              <!-- <label for="faqContentInput" class="form-label"> 내용</label> -->
+	              <textarea type="text" class="form-control" name="faqContent" id="faqContentInput" placeholder="내용 입력" rows="15" required></textarea>
+	          </div>
+	          <div class="content-btn">
+	              <button type="submit" class="btn" id="register">등록</button>
+	              <button type="button" class="btn btn-danger cancel"  onclick="location.href='${contextPath}/faq/list?cpage=1';">취소</button>
+	          </div>
+	      </form>
+	    </div>
+  	</div>    
+	
+	<!-- footer.jsp 동적 include -->
+	<jsp:include page="../common/footer.jsp"/>
+	
+		<script>
+	
+	// 유효성 검사 
+	function faqValidate() {
+		if ($("#faqTitleInput").val().trim().length == 0) {
+			alert("제목을 입력해 주세요.");
+			$("#faqTitleInput").focus();
+			return false;
+		}
+
+		if ($("#faqContentInput").val().trim().length == 0) {
+			alert("내용을 입력해 주세요.");
+			$("#faqContentInput").focus();
+			return false;
+		}
+	}
+	</script>
+
+
+</body>
+</html>
