@@ -156,7 +156,10 @@ public class MenuDAO {
 			pstmt.setString(2, menu.getMenuImg());
 			pstmt.setInt(3, menu.getMenuPrice());
 			pstmt.setInt(4, menu.getMenuSalePercent());
-			pstmt.setInt(5, menu.getStoreNo());
+			pstmt.setInt(5, menu.getMemberNo());
+			
+		
+			
 			
 			result = pstmt.executeUpdate();
 		}finally {
