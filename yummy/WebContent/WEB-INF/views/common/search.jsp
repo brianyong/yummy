@@ -24,7 +24,7 @@
                 </a>  
               </span>
               <form class="input-group" id="input-search" action="${contextPath}/gps/searchView" method="POST" >
-                <input type="search" class="form-control" aria-describedby="button-addon" name="searchGps" id="searchGps">
+                <input type="search" class="form-control" aria-describedby="button-addon" name="searchGps" id="searchGps" placeholder="예시)서울특별시 노원구 ">
                 <button class="btn" type="submit" id="button-addon">검색</button>
               </form>
             </div>
