@@ -66,6 +66,11 @@ public class GpsDAO {
 				String storeName = rs.getString(1);
 				String storeAddr = rs.getString(2);
 				
+				
+				int e = storeAddr.indexOf(",");
+				
+				storeAddr = storeAddr.substring(e+2);
+				
 				Store store = new Store(storeName, storeAddr);
 				
 				

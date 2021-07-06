@@ -66,7 +66,10 @@ public class GpsController extends HttpServlet {
 				// 서울시 동대문구 -> 공백으로 구를 추출
 				String[] gList = subSearch.split(" ");
 
+				
 				String searchGu = gList[1];
+				
+				System.out.println(searchGu);
 				
 				List<Store> sList = service.selectList(searchGu);
 				
