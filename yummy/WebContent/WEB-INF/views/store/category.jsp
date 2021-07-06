@@ -16,95 +16,110 @@
 
 <body>
 
-   <!-- header.jsp 동적 include -->
-   <jsp:include page="../common/header.jsp" />
-   
-   <!-- 스타일시트 -->
-<link rel="stylesheet"
-   href="${contextPath}/resources/css/category/category.css">
-   
-   <!-- search.jsp 동적 include -->
-   <jsp:include page="../common/search.jsp"/>
+	<!-- header.jsp 동적 include -->
+	<jsp:include page="../common/header.jsp" />
 
-   <div class="Category_Menu">
+	<!-- 스타일시트 -->
+	<link rel="stylesheet" href="${contextPath}/resources/css/category/category.css">
 
+	<!-- search.jsp 동적 include -->
+	<jsp:include page="../common/search.jsp" />
 
-      <input type="radio" name="tab" id="tab_01" value="1" onchange='getCategory(this);'> 
-      <label for="tab_01">한식</label> 
-       
-      <input type="radio" name="tab" id="tab_02" value="2" onchange='getCategory(this);'>
-      <label for="tab_02">양식</label> 
-      
-      <input type="radio" name="tab" id="tab_03" value="3" onchange='getCategory(this);'> 
-      <label for="tab_03">중식</label> 
-      
-      <input type="radio" name="tab" id="tab_04" value="4" onchange='getCategory(this);'> 
-      <label for="tab_04">일식</label>
-
-      <input type="radio" name="tab" id="tab_05" value="5" onchange='getCategory(this);'> 
-      <label for="tab_05">치킨/피자</label> 
-      
-      <input type="radio" name="tab" id="tab_06" value="6" onchange='getCategory(this);'> 
-      <label for="tab_06">야식</label> 
-      
-      <input type="radio" name="tab" id="tab_07" value="7" onchange='getCategory(this);'> 
-      <label for="tab_07">카페/디저트</label>
-         
-      <select id="Category_Menu_Small" onchange='getCategory(this);'>
-         <!-- 작아졌을때 select 박스 -->
-         <option value="1">한식</option>
-         <option value="2">양식</option>
-         <option value="3">중식</option>
-         <option value="4">일식</option>
-         <option value="5">치킨/피자</option>
-         <option value="6">야식</option>
-         <option value="7">카페/디저트</option>
-      </select>
-
-      <div class="Category_box con1">
-        
-         
-         <ul id="store">
-
-        <li class="row" id="storeli">
-
-            <div class="big">
-                <div class="img">img</div>
-                <div class="storeName">name</div>
-                <div class="storeGood">storegood</div>
-            </div>
-
-        </li>
+	<div class="Category_Menu">
 
 
-    </ul>
-         
-         
-      </div>
+		<input type="radio" name="tab" id="tab_01" value="1"
+			onchange='getCategory(this);'> <label for="tab_01">한식</label>
 
-      <div class="Category_box con2" id="Category_box">
-         <div class="Resterent_content">가게 정보 메뉴</div>
-      </div>
-      <div class="Category_box con3">
-         <div class="Resterent_content">가게 정보 메뉴</div>
-      </div>
-      <div class="Category_box con4">
-         <div class="Resterent_content">가게 정보 메뉴</div>
-      </div>
-      <div class="Category_box con5">
-         <div class="Resterent_content">가게 정보 메뉴</div>
-      </div>
-      <div class="Category_box con6">
-         <div class="Resterent_content">가게 정보 메뉴</div>
-      </div>
-      <div class="Category_box con7">
-         <div class="Resterent_content">가게 정보 메뉴</div>
-      </div>
-   </div>
-   </div>
+		<input type="radio" name="tab" id="tab_02" value="2"
+			onchange='getCategory(this);'> <label for="tab_02">양식</label>
 
-   <!-- footer.jsp 동적 include -->
-   <jsp:include page="../common/footer.jsp" />
+
+		<input type="radio" name="tab" id="tab_03" value="3"
+			onchange='getCategory(this);'> <label for="tab_03">중식</label>
+
+		<input type="radio" name="tab" id="tab_04" value="4"
+			onchange='getCategory(this);'> <label for="tab_04">일식</label>
+
+		<input type="radio" name="tab" id="tab_05" value="5"
+			onchange='getCategory(this);'> <label for="tab_05">치킨,
+			피자</label> <input type="radio" name="tab" id="tab_06" value="6"
+			onchange='getCategory(this);'> <label for="tab_06">야식</label>
+
+		<input type="radio" name="tab" id="tab_07" value="7"
+			onchange='getCategory(this);'> <label for="tab_07">카페,디저트</label>
+
+		<select id="Category_Menu_Small" onchange='getCategory(this);'>
+			<!-- 작아졌을때 select 박스 -->
+			<option value="1">한식</option>
+			<option value="2">양식</option>
+			<option value="3">중식</option>
+			<option value="4">일식</option>
+			<option value="5">치킨/피자</option>
+			<option value="6">야식</option>
+			<option value="7">카페/디저트</option>
+		</select>
+
+		<div class="Category_box con1">
+
+<!-- 
+			<ul id="store">
+
+				<li class="row" id="storeli">
+
+					<div class="big">
+						<div class="img">img</div>
+						<div class="storeName">name</div>
+						<div class="storeGood">storegood</div>
+					</div>
+
+				</li>
+
+
+			</ul>
+ -->
+
+		</div>
+
+		<div class="Category_box con2" id="Category_box">
+			<div class="Resterent_content">가게 정보 메뉴</div>
+		</div>
+		<div class="Category_box con3">
+			<div class="Resterent_content">가게 정보 메뉴</div>
+		</div>
+		<div class="Category_box con4">
+			<div class="Resterent_content">가게 정보 메뉴</div>
+		</div>
+		<div class="Category_box con5">
+			<div class="Resterent_content">가게 정보 메뉴</div>
+		</div>
+		<div class="Category_box con6">
+			<div class="Resterent_content">가게 정보 메뉴</div>
+		</div>
+		<div class="Category_box con7">
+			<div class="Resterent_content">가게 정보 메뉴</div>
+		</div>
+	</div>
+	
+
+	<!-- footer.jsp 동적 include -->
+	<jsp:include page="../common/footer.jsp" />
+	
+	
+	<script>
+		
+		const t="${param.t}";
+	
+		$(function(){
+			$("input[name='tab']").each(function(){
+				if($(this).val()==t){
+					$(this).click();
+				}
+				
+			});
+			
+		})
+	</script>
 
 </body>
 
