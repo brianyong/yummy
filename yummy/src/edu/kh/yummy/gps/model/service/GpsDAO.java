@@ -69,7 +69,7 @@ public class GpsDAO {
 				
 				int e = storeAddr.indexOf(",");
 				
-				storeAddr = storeAddr.substring(e+2);
+				storeAddr = storeAddr.substring(e+1);
 				
 				Store store = new Store(storeName, storeAddr);
 				
