@@ -1,0 +1,17 @@
+@charset "UTF-8";
+.sub-top{
+        margin-top: 5%;
+      }
+      .sub-top > hr{
+        width: 500px;
+        margin: auto;
+      }
+      .page-title{
+        text-align: center;
+        margin: auto;
+      }
+      #map{
+        margin-top: 3%;
+        width:100%;
+        height:600px;
+      }

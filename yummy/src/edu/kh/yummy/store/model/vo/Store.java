@@ -19,6 +19,11 @@ public class Store {
 	public Store() {
 	}
 
+	public Store(String storeName, String storeAddr) {
+		super();
+		this.storeName = storeName;
+		this.storeAddr = storeAddr;
+	}
 	public Store(int storeNo, String storeName, String storePhone, String storeAddr, String storeImg, String corNo,
 			int memberNo) {
 		super();
