@@ -17,19 +17,20 @@
         <div id="search"">
             <div class="input-group input-box">
               <span class="input-group-btn">
-                <button class="btn btn-default" type="button">
+                <a class="btn btn-default" id="gps" type="button" href="${contextPath}/gps/list">
                   <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                   <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
                   </svg>
-                </button>  
+                </a>  
               </span>
-              <div class="input-group" id="input-search">
-                <input type="search" class="form-control" aria-describedby="button-addon">
-                <button class="btn" type="button" id="button-addon">검색</button>
-              </div>
+              <form class="input-group" id="input-search" action="${contextPath}/gps/searchView" method="POST" >
+                <input type="search" class="form-control" aria-describedby="button-addon" name="searchGps" id="searchGps">
+                <button class="btn" type="submit" id="button-addon">검색</button>
+              </form>
             </div>
           </div>
     </div>
+    
 
 </body>
 </html>
