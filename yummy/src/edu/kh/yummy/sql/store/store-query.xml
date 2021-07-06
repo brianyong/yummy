@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+
+	<entry key="storeDetail">
+
+		SELECT STORE_NM, STORE_PHONE, STORE_ADDR, STORE_IMG, STORE_OPEN_TIME,STORE_CLOSE_TIME, STORE_STORY, COR_NO,
+		MENU_NO, MENU_NM, MENU_IMG, MENU_PRICE, MENU_SALE
+		FROM STORE
+		JOIN MENU USING (STORE_NO)
+		WHERE MENU_STATUS = 'Y' AND STORE_STATUS = 'Y' AND STORE_NO = ?
+
+	</entry>
+
+</properties>

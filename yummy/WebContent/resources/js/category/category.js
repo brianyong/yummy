@@ -66,12 +66,7 @@ function getCategory(el){
 			
 				
 			$.each(list, function(index, item){
-				console.log(item.storeNo)
-				console.log(item.storeName);
-				console.log(item.storeImg);
-				console.log(item.goodCount);
 				
-				//var store = contextPath + "store/store?type="+item.storeNo;
 				// 화면 초기화 
 				$(".Category_box").html("");
 				
@@ -108,7 +103,10 @@ function getCategory(el){
 function storeView(storeNo, el){
 	
 	console.log(storeNo);
-	
+	console.log(contextPath);
+
+	var url = contextPath+"/store/store?storeNo="+storeNo;
+	location.href = url;
 	
 }
 
