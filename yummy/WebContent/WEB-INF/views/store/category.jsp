@@ -20,8 +20,7 @@
 	<jsp:include page="../common/header.jsp" />
 
 	<!-- 스타일시트 -->
-	<link rel="stylesheet"
-		href="${contextPath}/resources/css/category/category.css">
+	<link rel="stylesheet" href="${contextPath}/resources/css/category/category.css">
 
 	<!-- search.jsp 동적 include -->
 	<jsp:include page="../common/search.jsp" />
@@ -34,6 +33,7 @@
 
 		<input type="radio" name="tab" id="tab_02" value="2"
 			onchange='getCategory(this);'> <label for="tab_02">양식</label>
+
 
 		<input type="radio" name="tab" id="tab_03" value="3"
 			onchange='getCategory(this);'> <label for="tab_03">중식</label>
@@ -55,14 +55,14 @@
 			<option value="2">양식</option>
 			<option value="3">중식</option>
 			<option value="4">일식</option>
-			<option value="5">치킨, 피자</option>
+			<option value="5">치킨/피자</option>
 			<option value="6">야식</option>
-			<option value="7">카페, 디저트</option>
+			<option value="7">카페/디저트</option>
 		</select>
 
 		<div class="Category_box con1">
 
-
+<!-- 
 			<ul id="store">
 
 				<li class="row" id="storeli">
@@ -77,7 +77,7 @@
 
 
 			</ul>
-
+ -->
 
 		</div>
 
