@@ -42,12 +42,11 @@
 			onchange='getCategory(this);'> <label for="tab_04">일식</label>
 
 		<input type="radio" name="tab" id="tab_05" value="5"
-			onchange='getCategory(this);'> <label for="tab_05">치킨,
-			피자</label> <input type="radio" name="tab" id="tab_06" value="6"
+			onchange='getCategory(this);'> <label for="tab_05">치킨/피자</label> <input type="radio" name="tab" id="tab_06" value="6"
 			onchange='getCategory(this);'> <label for="tab_06">야식</label>
 
 		<input type="radio" name="tab" id="tab_07" value="7"
-			onchange='getCategory(this);'> <label for="tab_07">카페,디저트</label>
+			onchange='getCategory(this);'> <label for="tab_07">카페/디저트</label>
 
 		<select id="Category_Menu_Small" onchange='getCategory(this);'>
 			<!-- 작아졌을때 select 박스 -->
@@ -62,42 +61,25 @@
 
 		<div class="Category_box con1">
 
-<!-- 
-			<ul id="store">
-
-				<li class="row" id="storeli">
-
-					<div class="big">
-						<div class="img">img</div>
-						<div class="storeName">name</div>
-						<div class="storeGood">storegood</div>
-					</div>
-
-				</li>
-
-
-			</ul>
- -->
-
 		</div>
 
 		<div class="Category_box con2" id="Category_box">
-			<div class="Resterent_content">가게 정보 메뉴</div>
+
 		</div>
 		<div class="Category_box con3">
-			<div class="Resterent_content">가게 정보 메뉴</div>
+
 		</div>
 		<div class="Category_box con4">
-			<div class="Resterent_content">가게 정보 메뉴</div>
+
 		</div>
 		<div class="Category_box con5">
-			<div class="Resterent_content">가게 정보 메뉴</div>
+
 		</div>
 		<div class="Category_box con6">
-			<div class="Resterent_content">가게 정보 메뉴</div>
+
 		</div>
 		<div class="Category_box con7">
-			<div class="Resterent_content">가게 정보 메뉴</div>
+
 		</div>
 	</div>
 	
