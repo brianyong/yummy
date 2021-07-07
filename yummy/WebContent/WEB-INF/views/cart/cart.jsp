@@ -54,7 +54,7 @@
             </div>
           </div>
           <div class="previous">
-          <button type=submit class="btn btn-warning" id="gogo" onclick="fnRequest('orderCart', ${total});">주문하러 가기</button>
+          <button type=submit class="btn btn-warning" id="gogo" onclick="location.href='${contextPath}/cart/orderCart'">주문하러 가기</button>
         </div>
         </div>
   </div>
@@ -65,9 +65,7 @@
 	<input type="hidden" name="menuNo" id="deleteMenuNo">
 </form>  
 
-<form action="#" method="POST" name="orderForm">
-	<input type="hidden" name="total" id="orderCart">
-</form>
+
 
 <script>
 function fnRequest(addr, menuNo){
@@ -76,11 +74,6 @@ function fnRequest(addr, menuNo){
 	document.requestForm.submit();
 }
 
-function fnRequest(addr, total){
-	document.requestForm.action = "${contextPath}/cart/"+addr;
-	$("#orderCart").val(total);
-	document.requestForm.submit();
-}
 </script>
 </body>
 </html>
