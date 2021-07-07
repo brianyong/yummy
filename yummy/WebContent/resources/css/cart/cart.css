@@ -1,0 +1,87 @@
+@charset "UTF-8";
+   .content{
+      min-height: 800px;
+      position: relative;
+  } 
+  
+  #box{
+  margin: auto;
+  }
+
+  .sub-top{
+    margin-top: 5%;
+  }
+
+  .page-title{
+    text-align: left;
+    margin-left: 10%;
+  }
+  .row-title{
+      width: 80%;
+  /*     margin-left: 10%; */
+      border: 1px solid lightslategray;
+  }
+
+  .box1{
+    margin-top: 1%;
+    margin-left: 1%;
+  }
+
+  .box2{
+    margin-bottom: 1%;
+  }
+
+  .plusminus{
+    margin-top: 30%;
+    margin-left: 45%;
+  }
+
+  .totalPrice{
+    margin-left: 3%;
+    font-size: 17px;
+  }
+
+  .order-btn{
+    border:1px solid black;
+    float: right;
+    width: 30%;
+  }
+
+  .plusMenu{
+    width:80%;
+    margin-left:10%;
+    border: 1px solid lightslategray;
+    text-align: center;
+  }
+
+  .delete-btn{
+    background-color: white;
+    color: #F8B03A;
+    border: 0;
+    margin-left: 85%;
+    margin-top: 1%;
+  }
+
+  .box3{
+    text-align: center;
+    padding: 2%;
+  }
+
+  .box4{
+    margin-top: 8%;
+    padding: 3%;
+  }
+
+  #realTotalPrice{
+    text-align: right;
+  }
+  
+  .previous{
+  text-align: right;
+  width: 90%;
+  margin-top: 1%;
+	}
+  #gogo{
+  margin-top: 2%;
+    text-align: right;
+  }

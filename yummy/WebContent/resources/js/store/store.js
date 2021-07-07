@@ -98,13 +98,9 @@ function amountMinus(el){
 }
 
 
-function amountPlus(){
-let amountNo = $('input[name=amount]').val();
-	console.log(amountNo);
-	
-	//$('.cartNo').text(amountNo);
-	
-	$('.modal').modal("hide");
+function amountPlus(el){
+		let count = $(el).parent().children().eq(0).val();
+		$(el).parent().children().eq(0).val(++count);
 	
 
 }
