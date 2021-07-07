@@ -13,6 +13,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
+import edu.kh.yummy.menu.model.vo.Menu;
+import edu.kh.yummy.store.model.vo.Store;
+
 public class StoreDAO {
 
 	// 자주 사용하는 JDBC 객체 참조 변수 선언
@@ -36,18 +39,64 @@ public class StoreDAO {
 		}
 	}
 
-	
-	/** 가게 상세보기 DAO
+
+
+	/** 가게 상세보기store 정보 DAO
+	 * @param conn
+	 * @param storeNo
+	 * @return store
+	 * @throws Exception
+	 */
+	public Store storeDetail(Connection conn, int storeNo) throws Exception{
+		
+		Store store = null;
+		
+		String sql = prop.getProperty("storeDetail");
+		
+		try {
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, storeNo); // 스토어 넘버로 조회
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				store = new Store();
+				
+				store.setStoreName(rs.getString("STORE_NM"));
+				store.setStorePhone(rs.getString("STORE_PHONE"));
+				store.setStoreAddr(rs.getString("STORE_ADDR"));
+				store.setStoreImg(rs.getString("STORE_IMG"));
+				store.setStoreOpen(rs.getString("STORE_OPEN_TIME"));
+				store.setStoreClose(rs.getString("STORE_CLOSE_TIME"));
+				store.setStoreStory(rs.getString("STORE_STORY"));
+				store.setCorNo(rs.getString("COR_NO"));
+			
+			}
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return store;
+	}
+
+
+
+	/** 가게 상세보기 menu 정보 DAO
 	 * @param conn
 	 * @param storeNo
 	 * @return list
 	 * @throws Exception
 	 */
-	public List<Map<String, Object>> storeDetail(Connection conn, int storeNo) throws Exception {
+	public List<Menu> storeMenu(Connection conn, int storeNo) throws Exception {
 
-		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+		List<Menu> list = null;
 		
-		String sql = prop.getProperty("storeDetail");
+		String sql = prop.getProperty("storeMenu");
 		
 		try {
 			
@@ -57,23 +106,21 @@ public class StoreDAO {
 			
 			rs = pstmt.executeQuery();
 			
+			list = new ArrayList<Menu>();
+			
 			while(rs.next()) {
-				Map<String, Object> map = new HashMap<String, Object>();
-				map.put("storeName", rs.getString(1));
-				map.put("storePhone", rs.getString(2));
-				map.put("storeAddr", rs.getString(3));
-				map.put("storeImg", rs.getString(4));
-				map.put("storeOpen", rs.getString(5));
-				map.put("storeClose", rs.getString(6));
-				map.put("storeStory", rs.getString(7));
-				map.put("corNo", rs.getString(8));
-				map.put("menuNo", rs.getInt(9));
-				map.put("menuName", rs.getString(10));
-				map.put("menuImg", rs.getString(11));
-				map.put("menuPrice", rs.getInt(12));
-				map.put("menuSale", rs.getInt(13));
 				
-				list.add(map);
+				Menu menu = null;
+				
+				int menuNo = rs.getInt("MENU_NO");
+				String menuName = rs.getString("MENU_NM");
+				String menuImg = rs.getString("MENU_IMG");
+				int menuPrice = rs.getInt("MENU_PRICE");
+				int menuSalePercent = rs.getInt("MENU_SALE");
+				
+				menu = new Menu(menuNo, menuName, menuImg, menuPrice, menuSalePercent);
+				
+				list.add(menu);
 			}
 			
 		} finally {
@@ -83,5 +130,9 @@ public class StoreDAO {
 		
 		return list;
 	}
+
+
+
+
 
 }
