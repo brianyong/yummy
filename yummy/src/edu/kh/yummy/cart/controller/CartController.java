@@ -108,37 +108,17 @@ public class CartController extends HttpServlet {
 				
 			// 주문하기로 이동하는 Controller
 			}else if(command.equals("orderCart")) {
-				/*
-				 * int storeNo = Integer.parseInt(request.getParameter("storeNo")); int menuNo =
-				 * Integer.parseInt(request.getParameter("menuNo")); String storeName =
-				 * request.getParameter("storeName"); String menuName =
-				 * request.getParameter("menuName"); int menuSaleCost =
-				 * Integer.parseInt(request.getParameter("menuSaleCost")); int menuAmount =
-				 * Integer.parseInt(request.getParameter("menuAmount"));
-				 * 
-				 * Cart cart = new Cart();
-				 * 
-				 * cart.setStoreNo(storeNo); cart.setMenuNo(menuNo);
-				 * cart.setStoreName(storeName); cart.setMenuName(menuName);
-				 * cart.setMenuSaleCost(menuSaleCost); cart.setMenuAmount(menuAmount);
-				 * 
-				 * HttpSession session = request.getSession(); session.setAttribute("cartList",
-				 * cartList);
-				 */
-				
-				int total = Integer.parseInt(request.getParameter("total"));
-				
 
 				if(cartList != null) {
+					
 					path = "/WEB-INF/views/order/placeOrder.jsp";
-					request.setAttribute("total", total);
 
 				}else {
-
 					path = request.getHeader("referer");
 				}
 
-				response.sendRedirect(path);
+				view = request.getRequestDispatcher(path);
+				view.forward(request, response);	
 				
 			}
 			
