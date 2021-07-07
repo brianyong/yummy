@@ -13,10 +13,7 @@
 <!-- css -->
 <link rel="stylesheet" href="${contextPath}/resources/css/store/store.css" type="text/css"/>
 
-
-<!-- 지도 api -->
-<script type="text/javascript"
-   src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f19da4b9e291fb61ab3caf09858c50a9&libraries=services"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f19da4b9e291fb61ab3caf09858c50a9&libraries=services,clusterer,drawing"></script>
 
 <!-- js파일 추가 -->
 <script src="${contextPath}/resources/js/store/store.js" defer></script>
@@ -177,7 +174,7 @@
 		<input type="hidden" name="storeName" id="storeName" value="${store.storeName}">
 	</form>  
 
-
+	
 	<script>
 		function fnRequest(addr){
 			
@@ -212,7 +209,6 @@
 		
 		
 	</script>
-
 
 
 
