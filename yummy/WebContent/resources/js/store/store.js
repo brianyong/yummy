@@ -43,7 +43,6 @@ geocoder.addressSearch('제주특별자치도 제주시 첨단로 242', function
 
 $(document).ready(function () {
     $(".con1").css("display", "block");
-
     
     $(".con2").css("display", "none");
     $(".con3").css("display", "none");

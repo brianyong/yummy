@@ -13,6 +13,18 @@ public class Menu {
 	public Menu() {}
 	
 	
+	public Menu(int menuNo, String menuName, String menuImg, int menuPrice, int menuSalePercent) {
+		super();
+		this.menuNo = menuNo;
+		this.menuName = menuName;
+		this.menuImg = menuImg;
+		this.menuPrice = menuPrice;
+		this.menuSalePercent = menuSalePercent;
+	}
+
+
+
+
 	public String getMenuStatus() {
 		return menuStatus;
 	}

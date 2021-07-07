@@ -1,4 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -41,11 +42,11 @@
 
 				<div class="store">가게 이름</div>
 
-				<div class="store_name">00분식</div>
+				<div class="store_name">${store.storeName}</div> 
 
 				<div class="time">영업 시간</div>
 
-				<div class="store_time">11:00~21:00</div>
+				<div class="store_time">${store.storeOpen}~${store.storeClose}</div>
 
 			</div>
 
@@ -63,49 +64,32 @@
 						정보</label> <input type="radio" name="tab" value="tab_03" id="tab_03">
 					<label for="tab_03">위치</label>
 
-					<div class="category_box con1">
+					<div class="menu_box con1">
+					
+					
+					<c:forEach items="${list}" var="item">
+					
+					
+					
+							<div class="menu_conbox" data-toggle="modal" data-target="#exampleModal">
+								<div class="Menu_name_content">${item.menuName}</div>
 
-						<div class="menu_conbox" data-toggle="modal" data-target="#exampleModal">
-							<div class="Menu_name_content">까르보나라로제떡볶이</div>
+								<div class="Menu_basiccost_content">${item.menuPrice}</div>
 
-							<div class="Menu_basiccost_content">10,000원</div>
-
-							<div class="Menu_salecost_content">7,000원</div>
-							<div class="Menu_img">
-								<img src="#">
+								<div class="Menu_salecost_content"></div>
+								<div class="Menu_img"><img src="${contextPath}/resources/images/store/cafe.jpg"></div>
 							</div>
-						</div>
-
-						<div class="menu_conbox" data-toggle="modal" data-target="#exampleModal">
-							<div class="Menu_name_content">튀김</div>
-
-							<div class="Menu_basiccost_content">10,000원</div>
-
-							<div class="Menu_salecost_content">8,000원</div>
-							<div class="Menu_img">
-								<img src="#">
-							</div>
-						</div>
-
-						<div class="menu_conbox" data-toggle="modal" data-target="#exampleModal">
-							<div class="Menu_name_content">순대</div>
-
-							<div class="Menu_basiccost_content">10,000원</div>
-
-							<div class="Menu_salecost_content">5,000원</div>
-							<div class="Menu_img">
-								<img src="#">
-							</div>
-						</div>
+					
+					</c:forEach>
 
 					</div>
 
-					<div class="category_box con2">
+					<div class="menu_box con2">
 
 						<div class="information_container">
 
 							<div class="store_info_title">가게 소개</div>
-							<textarea id="store_info_text" name="store_info_text" readonly>asdfasdf</textarea>
+							<textarea id="store_info_text" name="store_info_text" readonly>${store.storeStory}</textarea>
 
 							<div class="sales_info_title">영업 정보</div>
 							<textarea id="sales_info_text" name="salse_info_text" readonly>asdfasdf</textarea>
@@ -117,11 +101,11 @@
 
 					</div>
 
-					<div class="category_box con3">
+					<div class="menu_box con3">
 
 						<div class="location_container">
 
-							<div class="map_title">제주특별자치도 제주시 첨단로 242</div>
+							<div class="map_title">${store.storeAddr}</div>
 							<div id="map"></div>
 
 						</div>
