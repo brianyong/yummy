@@ -32,6 +32,11 @@ public class CartController extends HttpServlet {
 		String path = null; // 응답화면 주소 또는 경로
 		RequestDispatcher view = null; // 요청 위임 객체 저장 참조 변수
 		
+		// sweetalert용 변수
+		String icon = null;
+		String title = null;
+		String text = null;
+		
 		try {
 			List<Cart> cartList = (List<Cart>)request.getSession().getAttribute("cartList");
 					
@@ -63,7 +68,7 @@ public class CartController extends HttpServlet {
 				
 
 				cartList.add(cart);
-				
+				System.out.println(cartList);
 
 				request.setAttribute("storeName", storeName);
 				path = "/WEB-INF/views/cart/cart.jsp";
@@ -103,6 +108,37 @@ public class CartController extends HttpServlet {
 				
 			// 주문하기로 이동하는 Controller
 			}else if(command.equals("orderCart")) {
+				/*
+				 * int storeNo = Integer.parseInt(request.getParameter("storeNo")); int menuNo =
+				 * Integer.parseInt(request.getParameter("menuNo")); String storeName =
+				 * request.getParameter("storeName"); String menuName =
+				 * request.getParameter("menuName"); int menuSaleCost =
+				 * Integer.parseInt(request.getParameter("menuSaleCost")); int menuAmount =
+				 * Integer.parseInt(request.getParameter("menuAmount"));
+				 * 
+				 * Cart cart = new Cart();
+				 * 
+				 * cart.setStoreNo(storeNo); cart.setMenuNo(menuNo);
+				 * cart.setStoreName(storeName); cart.setMenuName(menuName);
+				 * cart.setMenuSaleCost(menuSaleCost); cart.setMenuAmount(menuAmount);
+				 * 
+				 * HttpSession session = request.getSession(); session.setAttribute("cartList",
+				 * cartList);
+				 */
+				
+				int total = Integer.parseInt(request.getParameter("total"));
+				
+
+				if(cartList != null) {
+					path = "/WEB-INF/views/order/placeOrder.jsp";
+					request.setAttribute("total", total);
+
+				}else {
+
+					path = request.getHeader("referer");
+				}
+
+				response.sendRedirect(path);
 				
 			}
 			

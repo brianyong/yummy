@@ -22,6 +22,7 @@
             <h1 class="page-title" id="store-name">${storeName}</h1>
             <br>
           </div>
+          <c:set var="total" value="0"/>
 					<c:forEach items="${cartList}" var="cart">
           <div class="row row-title" id="box">
             <div class="col box1"><p>${cart.menuName}</p>
@@ -37,6 +38,7 @@
                 <button class="delete-btn" onclick="fnRequest('deleteCart', ${cart.menuNo});"><b>삭제</b></button>
             </div>
           </div>
+					<c:set var="total" value="${total +(cart.menuSaleCost * cart.menuAmount)}"/>
     		</c:forEach>
           <div class="row-title box3" id="box">
             <button type="button" class="btn btn-warning" onclick="location.href='${contextPath}/store/store?storeNo=${param.storeNo}'">+</button>더 담으러 가기
@@ -48,11 +50,11 @@
             </div>
 
             <div class="col-md-6" id="realTotalPrice">
-            <b>8,000원</b>
+            <b>${total}원</b>
             </div>
           </div>
           <div class="previous">
-          <button type=submit class="btn btn-warning" id="gogo" onclick="location.href='${contextPath}/cart/orderCart'">주문하러 가기</button>
+          <button type=submit class="btn btn-warning" id="gogo" onclick="fnRequest('orderCart', ${total});">주문하러 가기</button>
         </div>
         </div>
   </div>
@@ -63,10 +65,20 @@
 	<input type="hidden" name="menuNo" id="deleteMenuNo">
 </form>  
 
+<form action="#" method="POST" name="orderForm">
+	<input type="hidden" name="total" id="orderCart">
+</form>
+
 <script>
 function fnRequest(addr, menuNo){
 	document.requestForm.action = "${contextPath}/cart/"+addr;
 	$("#deleteMenuNo").val(menuNo);
+	document.requestForm.submit();
+}
+
+function fnRequest(addr, total){
+	document.requestForm.action = "${contextPath}/cart/"+addr;
+	$("#orderCart").val(total);
 	document.requestForm.submit();
 }
 </script>
