@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import edu.kh.yummy.cart.model.vo.Cart;
 import edu.kh.yummy.menu.model.vo.Menu;
 import edu.kh.yummy.store.model.service.StoreService;
 import edu.kh.yummy.store.model.vo.Store;
@@ -30,7 +31,6 @@ public class StoreServlet extends HttpServlet {
 		StoreService service = new StoreService();
 
 		int storeNo = Integer.parseInt(request.getParameter("storeNo"));
-
 
 		try {
 			

@@ -87,6 +87,7 @@
 								
 								
 								</li>
+								<li class="nav-item active"><a class="nav-link" href="${contextPath}/cart/cart">장바구니</a></li>
 								<li class="nav-item active"><a class="nav-link" href="${contextPath}/member/orderList">주문내역</a></li>
 								<li class="nav-item active"><a class="nav-link" href="${contextPath}/member/logout">로그아웃</a></li>
 						</c:otherwise>

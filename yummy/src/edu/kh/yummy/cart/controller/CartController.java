@@ -44,7 +44,7 @@ public class CartController extends HttpServlet {
 			// 장바구니 화면 전환 Controller
 			if(command.equals("cart")) {
 				
-				
+					
 				int storeNo = Integer.parseInt(request.getParameter("storeNo"));
 				int menuNo = Integer.parseInt(request.getParameter("menuNo"));
 				String storeName = request.getParameter("storeName");
@@ -75,7 +75,6 @@ public class CartController extends HttpServlet {
 				view = request.getRequestDispatcher(path);
 				view.forward(request, response);				
 				
-				
 			// 메뉴 삭제 Controller
 			} else if(command.equals("deleteCart")){
 				
@@ -88,8 +87,7 @@ public class CartController extends HttpServlet {
 					if(cart.getMenuNo() == menuNo) {
 						// 해당 menuNo가 존재하는 cart의 인덱스값
 						index = cartList.indexOf(cart);
-						System.out.println(index);
-						System.out.println(menuNo);
+						break;
 					}else {
 						index = -1;
 					}

@@ -76,10 +76,6 @@
 			</c:otherwise>
 		</c:choose>
 
-
-
-
-
 		<jsp:include page="../common/footer.jsp" />
 </body>
 </html>

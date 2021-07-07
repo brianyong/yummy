@@ -80,12 +80,12 @@
               url :"${contextPath}/gps/search", 
               type : "POST",
               data : {"searchGps" : searchGps},
-              //headers : {'Authorization': 'KakaoAK aa50225596f73c0c9d03c650f36b3f63'},
 	      	  type : "POST",
 	          dataType : "JSON", 
               success : function(sList){
                  if(sList != null){ 
                  	createMap(sList);
+                 	console.log(sList);
                  }
               },
               error : function(){
