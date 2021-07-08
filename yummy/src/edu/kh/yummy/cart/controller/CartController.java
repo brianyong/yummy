@@ -43,7 +43,6 @@ public class CartController extends HttpServlet {
 		try {
 			List<Cart> cartList = (List<Cart>)request.getSession().getAttribute("cartList");
 					
-			
 			// 장바구니 화면 전환 Controller
 			if(command.equals("cart")) {
 				
@@ -55,7 +54,7 @@ public class CartController extends HttpServlet {
 				int menuSaleCost = Integer.parseInt(request.getParameter("menuSaleCost"));
 				int menuAmount = Integer.parseInt(request.getParameter("menuAmount"));
 		
-				
+		
 				
 				Cart cart = new Cart();
 				
@@ -66,12 +65,14 @@ public class CartController extends HttpServlet {
 				cart.setMenuSaleCost(menuSaleCost);
 				cart.setMenuAmount(menuAmount);
 				
+				
+				cartList.add(cart);
+				
 				HttpSession session = request.getSession();
 				session.setAttribute("cartList", cartList);
 				
 
-				cartList.add(cart);
-				System.out.println(cartList);
+				//System.out.println(cartList);
 
 				request.setAttribute("storeName", storeName);
 				path = "/WEB-INF/views/cart/cart.jsp";
