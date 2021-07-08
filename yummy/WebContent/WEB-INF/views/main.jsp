@@ -47,7 +47,7 @@
 		<div class="category">
 			<div class="row">
 				<div class="col-xs-6 col-sm-4 col-md-3">
-					<a href="${contextPath}/category/category" class="category-list">
+					<a href="${contextPath}/category/category?t=0" class="category-list">
 						<img src="${contextPath}/resources/images/main/mainTotal.png">
 					</a>
 				</div>

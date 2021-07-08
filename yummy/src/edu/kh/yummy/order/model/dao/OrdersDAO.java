@@ -13,11 +13,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
+import edu.kh.yummy.cart.model.vo.Cart;
 import edu.kh.yummy.member.model.dao.MemberDAO;
 import edu.kh.yummy.menu.model.vo.Menu;
 import edu.kh.yummy.order.model.vo.MemberOrder;
 import edu.kh.yummy.order.model.vo.Orders;
 import edu.kh.yummy.order.model.vo.Pagination;
+import oracle.sql.TIMESTAMP;
 
 public class OrdersDAO {
 
@@ -210,36 +212,125 @@ public class OrdersDAO {
 	}
 
 	/**
-	 * 
-	 * 주문하기 DAO
+	 * 다음 주문번호 조회
 	 * 
 	 * @param conn
-	 * @param storeName
-	 * @param storeAddress
-	 * @param menuName
-	 * @param menuAmount
-	 * @param menuSaleCost
+	 * @return orderNo
+	 * @throws Exception
+	 */
+	public int nextOrderNo(Connection conn) throws Exception {
+
+		int orderNo = 0;
+
+		String sql = prop.getProperty("nextOrderNo");
+
+		try {
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+
+			if (rs.next()) {
+				orderNo = rs.getInt(1);
+			}
+		} finally {
+			close(rs);
+			close(stmt);
+		}
+
+		return orderNo;
+	}
+
+	/**
+	 * 주문하기 DAO1
+	 * 
+	 * @param orderNo
+	 * @param orderVisitTime
+	 * @param orderRequest
+	 * @param memberNo
 	 * @return result
 	 * @throws Exception
 	 */
-	public int placeOrder(Connection conn, String storeName, String storeAddress, String menuName, int menuAmount,
-			int menuSaleCost) throws Exception {
+	public int placeOrder1(Connection conn, int orderNo, String orderVisitTime, String orderRequest, int memberNo)
+			throws Exception {
+
 		int result = 0;
 
-		String sql = prop.getProperty("placeOrder");
+		String sql = prop.getProperty("placeOrder1");
 
 		try {
 			pstmt = conn.prepareStatement(sql);
 
-			pstmt.setString(1, storeName);
-			pstmt.setString(2, storeAddress);
-			pstmt.setString(3, menuName);
-			pstmt.setInt(4, menuAmount);
-			pstmt.setInt(5, menuSaleCost);
+			pstmt.setInt(1, orderNo);
+			pstmt.setString(2, orderRequest);
+			pstmt.setString(3, orderVisitTime);
+			pstmt.setInt(4, memberNo);
+
+			result = pstmt.executeUpdate();
+
 		} finally {
 			close(pstmt);
 		}
+		return result;
+	}
 
+	/*	*//**
+			 * 주문하기 DAO2
+			 * 
+			 * @param conn
+			 * @param orderNo
+			 * @param menuNo
+			 * @param menuAmount
+			 * @return
+			 * @throws Exception
+			 *//*
+				 * public int placeOrder2(Connection conn, int orderNo, int menuNo, int
+				 * menuAmount) throws Exception{
+				 * 
+				 * int result = 0;
+				 * 
+				 * String sql = prop.getProperty("placeOrder2"); try { pstmt =
+				 * conn.prepareStatement(sql);
+				 * 
+				 * pstmt.setInt(1, orderNo); pstmt.setInt(2, menuNo); pstmt.setInt(3,
+				 * menuAmount);
+				 * 
+				 * result = pstmt.executeUpdate();
+				 * 
+				 * } finally { close(pstmt);
+				 * 
+				 * } return result;
+				 * 
+				 * }
+				 */
+
+	/**
+	 * 주문하기 DAO2
+	 * @param conn
+	 * @param cart
+	 * @param orderNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertOrderDetail(Connection conn, Cart cart, int orderNo) throws Exception{
+		// TODO Auto-generated method stub
+
+		int result = 0;
+
+		String sql = prop.getProperty("placeOrder2");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			
+			pstmt.setInt(1, orderNo);
+			pstmt.setInt(2, cart.getMenuNo());
+			pstmt.setInt(3, cart.getMenuAmount());
+			
+			result = pstmt.executeUpdate();
+		
+		}finally {
+			close(pstmt);
+		}
+		
 		return result;
 	}
 

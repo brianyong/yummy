@@ -9,19 +9,23 @@
 <meta charset="UTF-8">
 <title>주문내역</title>
 
-<link rel="stylesheet"
-	href="${contextPath}/resources/css/order/orderList.css" type="text/css" />
+
 </head>
 <body>
 
 
 	<!-- header.jsp 동적 include -->
 	<jsp:include page="../common/header.jsp" />
+	<link rel="stylesheet"
+	href="${contextPath}/resources/css/order/orderList.css" type="text/css" />
+	
+	
 
 	<!-- search.jsp 동적 include -->
 	<jsp:include page="../common/search.jsp" />
+	
 
-
+	
 	<div class="container">
 
 		<h2>주문 내역</h2>
@@ -34,7 +38,7 @@
 							<div id="orderDate1">${order.orderDate}</div>
 							<div id="brandImg1">${order.storeName }</div>
 							<div id="location1">${order.storeAddress}</div>
-							<div id="totalprice1">주문금액</div>
+							<div id="totalprice1">상세보기</div>
 
 							<p>
 								<a class="btn btn-primary btn" data-toggle="collapse"
@@ -47,7 +51,7 @@
 							id="collapseExample${vs.count}">
 							<div class="card card-body" id="detailOpen">
 								<div class="form-group">
-									<label for="orderList">주문내역</label>
+									<label for="orderList" id="orderDetailText">주문내역</label>
 									<table class="table table-bordered" id="orderList">
 										<thead>
 											<tr class="orderContent">

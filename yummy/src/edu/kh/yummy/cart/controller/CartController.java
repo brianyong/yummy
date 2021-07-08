@@ -12,7 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import edu.kh.yummy.cart.model.service.CartService;
 import edu.kh.yummy.cart.model.vo.Cart;
+import edu.kh.yummy.member.model.vo.Member;
+import edu.kh.yummy.store.model.vo.Store;
 
 // 장바구니 서블릿 주소
 @WebServlet("/cart/*")
@@ -108,8 +111,24 @@ public class CartController extends HttpServlet {
 			}else if(command.equals("orderCart")) {
 
 				if(cartList != null) {
+					int storeNo = 0;
+					
+					for(Cart cart : cartList) {
+						storeNo = cart.getStoreNo();
+					}
+					
+					Store store = new CartService().selectStore(storeNo);
+					
+					HttpSession session = request.getSession();
+					String memberPhone = ((Member)session.getAttribute("loginMember")).getMemberPhone();
+					
+//					System.out.println(store);
+					
+				
 					
 					path = "/WEB-INF/views/order/placeOrder.jsp";
+					request.setAttribute("memberPhone", memberPhone);
+					request.setAttribute("store", store);
 
 				}else {
 					path = request.getHeader("referer");

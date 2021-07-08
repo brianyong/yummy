@@ -15,20 +15,22 @@
 	<!-- 오더 정보 SQL -->
 	<entry key="orderListView">
 
-      	SELECT* FROM(
-        	SELECT ROWNUM RNUM, A.*FROM
-                (
-                          SELECT STORE_NO, STORE_NM,STORE_ADDR,PLACEORDER.MEMBER_NO,ORDER_NO, ORDER_DATE
-                            FROM PLACEORDER
-                            JOIN ORDERDETAIL	USING(ORDER_NO)
-                            JOIN MENU USING(MENU_NO)
-                            JOIN STORE USING(STORE_NO)
-                            WHERE PLACEORDER.MEMBER_NO = ?
-                            GROUP BY STORE_NO, STORE_NM,STORE_ADDR,PLACEORDER.MEMBER_NO,ORDER_NO, ORDER_DATE
-                            ORDER BY ORDER_NO DESC
-                ) A
-            )
-		WHERE RNUM BETWEEN ? AND ?       
+		SELECT* FROM(
+		SELECT ROWNUM RNUM, A.*FROM
+		(
+		SELECT STORE_NO, STORE_NM,STORE_ADDR,PLACEORDER.MEMBER_NO,ORDER_NO,
+		ORDER_DATE
+		FROM PLACEORDER
+		JOIN ORDERDETAIL USING(ORDER_NO)
+		JOIN MENU USING(MENU_NO)
+		JOIN STORE USING(STORE_NO)
+		WHERE PLACEORDER.MEMBER_NO = ?
+		GROUP BY STORE_NO, STORE_NM,STORE_ADDR,PLACEORDER.MEMBER_NO,ORDER_NO,
+		ORDER_DATE
+		ORDER BY ORDER_NO DESC
+		) A
+		)
+		WHERE RNUM BETWEEN ? AND ?
 
 	</entry>
 
@@ -38,16 +40,34 @@
 		WHERE MEMBER_NO= ?
 
 	</entry>
+	<entry key="nextOrderNo">
+		SELECT EX_SEQ.NEXTVAL FROM DUAL
+
+	</entry>
 
 
 	<entry key="selectOrderMenuList">
-	   SELECT * FROM PLACEORDER
-	   JOIN ORDERDETAIL USING(ORDER_NO)
-	   JOIN MENU USING(MENU_NO)
-	   WHERE ORDER_NO = ?
+		SELECT * FROM PLACEORDER
+		JOIN ORDERDETAIL USING(ORDER_NO)
+		JOIN MENU USING(MENU_NO)
+		WHERE ORDER_NO = ?
 	</entry>
-	<entry key="placeOrder">
-	 
+	<entry key="nextOrderNo">
+
+		SELECT EX_SEQ.NEXTVAL FROM DUAL
+
+	</entry>
+	<entry key="placeOrder1">
+
+		INSERT INTO PLACEORDER
+		VALUES(?, DEFAULT , ? , ?, ?)
+
+	</entry>
+	<entry key="placeOrder2">
+
+		INSERT INTO ORDERDETAIL
+		VALUES(?, ? , ?)
+
 	</entry>
 
 
