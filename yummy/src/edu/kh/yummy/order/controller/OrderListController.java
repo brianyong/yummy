@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import com.sun.org.apache.bcel.internal.generic.Select;
 
 import edu.kh.yummy.store.model.vo.Store;
+import edu.kh.yummy.cart.model.vo.Cart;
 import edu.kh.yummy.member.model.service.MemberService;
 import edu.kh.yummy.member.model.vo.Member;
 import edu.kh.yummy.order.model.service.OrdersService;
@@ -63,6 +64,54 @@ public class OrderListController extends HttpServlet {
 				path = "/WEB-INF/views/order/orderList.jsp";
 				view = request.getRequestDispatcher(path);
 				view.forward(request, response);
+
+			}
+			
+			else if(command.equals("placeOrder")) {
+				
+				
+				HttpSession session = request.getSession();
+
+				int memberNo = ((Member) session.getAttribute("loginMember")).getMemberNo();
+
+				List<Cart> cartList = ((List<Cart>) session.getAttribute("cartList"));
+				
+				
+
+				
+				String orderVisitTime = request.getParameter("orderVisitTime");
+				String orderRequest = request.getParameter("orderRequest");
+
+			
+				
+				
+				Orders orders= new Orders();
+				try {
+					int result = new OrdersService().placeOrder(cartList, orders, memberNo, orderVisitTime, orderRequest);
+					
+					
+					
+					
+					if (result > 0) { // 회원 업데이트 성공
+
+						
+					
+						
+						session.setAttribute("icon", "success"); // success, warning, error, info
+						session.setAttribute("title", "주문성공");
+
+					} else {
+						session.setAttribute("icon", "error"); // success, warning, error, info
+						session.setAttribute("title", "주문실패");
+
+					}
+					// 7. 메인페이지 재요청
+
+					response.sendRedirect(request.getContextPath());
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 
 			}
 

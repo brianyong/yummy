@@ -16,7 +16,7 @@ public class Orders {
 	   private String menuName; //메뉴명
 	   private int menuPrice; //메뉴 가격
 	   
-	  private Timestamp orderVisitTime;
+	  private String orderVisitTime;
 	  
 	  private String customerPhone;
 	  
@@ -29,8 +29,9 @@ public class Orders {
 	
 	
 
+
 	public Orders(int orderNo, Date orderDate, String orderRequest, Timestamp visitTime, int memberNo,
-			String storeAddress, String storeName, String menuName, int menuPrice, Timestamp orderVisitTime,
+			String storeAddress, String storeName, String menuName, int menuPrice, String orderVisitTime,
 			String customerPhone, String customerRequest) {
 		super();
 		this.orderNo = orderNo;
@@ -51,9 +52,7 @@ public class Orders {
 
 
 
-	
-
-	public Timestamp getOrderVisitTime() {
+	public String getOrderVisitTime() {
 		return orderVisitTime;
 	}
 
@@ -61,11 +60,9 @@ public class Orders {
 
 
 
-	public void setOrderVisitTime(Timestamp orderVisitTime) {
+	public void setOrderVisitTime(String orderVisitTime) {
 		this.orderVisitTime = orderVisitTime;
 	}
-
-
 
 
 
