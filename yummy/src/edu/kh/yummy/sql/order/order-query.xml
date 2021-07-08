@@ -2,11 +2,52 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 
-	<!-- 오더 정보  SQL -->
+
+	<!-- 오더 정보 SQL -->
 	<entry key="orderInfo">
-		SELECT ORDER_NO, ORDER_DATE, ORDER_REQUEST, ORDER_VISIT_TIME
+		SELECT ORDER_NO, ORDER_DATE, ORDER_REQUEST,
+		ORDER_VISIT_TIME
 		FROM PLACEORDER
 		WHERE MEMBER_NO = ?
+	</entry>
+
+
+	<!-- 오더 정보 SQL -->
+	<entry key="orderListView">
+
+      	SELECT* FROM(
+        	SELECT ROWNUM RNUM, A.*FROM
+                (
+                          SELECT STORE_NO, STORE_NM,STORE_ADDR,PLACEORDER.MEMBER_NO,ORDER_NO, ORDER_DATE
+                            FROM PLACEORDER
+                            JOIN ORDERDETAIL	USING(ORDER_NO)
+                            JOIN MENU USING(MENU_NO)
+                            JOIN STORE USING(STORE_NO)
+                            WHERE PLACEORDER.MEMBER_NO = ?
+                            GROUP BY STORE_NO, STORE_NM,STORE_ADDR,PLACEORDER.MEMBER_NO,ORDER_NO, ORDER_DATE
+                            ORDER BY ORDER_NO DESC
+                ) A
+            )
+		WHERE RNUM BETWEEN ? AND ?       
+
+	</entry>
+
+	<entry key="getListCount">
+		SELECT COUNT(*)
+		FROM PLACEORDER
+		WHERE MEMBER_NO= ?
+
+	</entry>
+
+
+	<entry key="selectOrderMenuList">
+	   SELECT * FROM PLACEORDER
+	   JOIN ORDERDETAIL USING(ORDER_NO)
+	   JOIN MENU USING(MENU_NO)
+	   WHERE ORDER_NO = ?
+	</entry>
+	<entry key="placeOrder">
+	 
 	</entry>
 
 
