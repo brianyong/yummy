@@ -8,7 +8,6 @@ const checkObj = {
     "name": false,
     "phone2": false,
     "email": false,
-    //"check_all": false,
 };
 
 // 아이디가 입력될 때 마다 유효성 검사
@@ -193,19 +192,32 @@ $(".TOS_Content").on("click", ".normal", function() {
 			$("#check_all").prop("checked", is_checked);
 });
 		
-//체크박스 체크 여부 확인 스크립트		
-/*if ($("#check_all:checked").length != 0) {
-				swal({
-					"icon" : "info",
-					"title" : "약관 동의를 체크해주세요."
-				})
-				return true;
-}*/
+//체크박스 체크 여부 확인 스크립트
+function TOSvalidate(){
+	if ($("#check_all:checked").length == 0) {
+					swal({
+						"icon" : "info",
+						"title" : "약관 동의를 체크해주세요."
+					})
+					return false;
+	}
+}
 
 
 
 // 회원 가입 버튼 클릭 시 요소 전체 유효성 검사 여부 확인
 function validate(){
+	
+/*	var a = console.log($("input:checkbox[name='ck']:checked").length);
+	
+	if (a!=4) {
+       swal({
+					"icon" : "info",
+					"title" : "약관 동의를 체크해주세요."
+		})
+	return false;
+    }*/
+
 
     // checkObj에 작성된 속성들이 모두 true인지 확인
 
@@ -246,11 +258,11 @@ function validate(){
                 $(selector).focus();
                 // 유효하지 않은 값을 입력한 부분으로 포커스 이동
             });
-		
+
             return false;  // submit 이벤트 제거(회원가입 실행 X)
 
         }
 
     }
-
+	
 }

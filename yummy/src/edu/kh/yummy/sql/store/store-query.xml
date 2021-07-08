@@ -21,5 +21,14 @@
 		WHERE MENU_STATUS = 'Y' AND STORE_NO = ?
 
 	</entry>
+	
+	
+	<entry key="createstore">
+		
+		INSERT INTO STORE 
+		VALUES (SEQ_STO_NO.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, 'Y', ?, 'IMG', ?, ?)
+		<!-- 가게번호 시퀀스 처리 -->
+	
+	</entry>
 
 </properties>

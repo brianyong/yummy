@@ -130,6 +130,45 @@ public class StoreDAO {
 		
 		return list;
 	}
+	
+	
+
+	/** 가게 정보 등록 DAO
+	 * @param conn
+	 * @param store
+	 * @param memberNo 
+	 * @return result
+	 * @throws Exception
+	 */
+	public int StoreDAO(Connection conn, Store store, int memberNo) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			
+			  String sql = prop.getProperty("createstore");
+		         
+		      pstmt = conn.prepareStatement(sql);
+		      
+		      pstmt.setString(1, store.getStoreName());
+		      pstmt.setString(2, store.getStorePhone());
+		      pstmt.setString(3, store.getStoreAddr());
+		      pstmt.setString(4, store.getStoreImg());
+		      pstmt.setString(5, store.getStoreOpen());
+		      pstmt.setString(6, store.getStoreClose());
+		      pstmt.setString(7, store.getStoreStory());
+		      pstmt.setString(8, store.getCorNo());
+		      pstmt.setInt(9, store.getCategoryNo());
+		      pstmt.setInt(10, memberNo);
+		      
+		      result = pstmt.executeUpdate();
+
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
 
 
 
