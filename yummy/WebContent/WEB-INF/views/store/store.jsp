@@ -10,9 +10,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>가게 상세보기</title>
-<!-- css -->
-<link rel="stylesheet"
-	href="${contextPath}/resources/css/store/store.css" type="text/css" />
 
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f19da4b9e291fb61ab3caf09858c50a9&libraries=services,clusterer,drawing"></script>
@@ -28,6 +25,9 @@
 
 	<!-- header.jsp 동적 include -->
 	<jsp:include page="../common/header.jsp" />
+<!-- css -->
+<link rel="stylesheet"
+	href="${contextPath}/resources/css/store/store.css" type="text/css" />
 
 	<div class="container">
 
