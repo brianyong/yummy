@@ -48,6 +48,7 @@ public class Notice2Service {
 			rollback(conn);
 		}
 		
+		close(conn);
 		
 		return result;
 	}
@@ -61,6 +62,7 @@ public class Notice2Service {
 			result = result.replaceAll(">", "&gt;");
 			result = result.replaceAll("\"", "&quot;");
 		}
+		
 		
 		return result;
 	}
