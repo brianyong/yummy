@@ -2,17 +2,6 @@ body{
     margin: 0;
 }
 
-.banner_img{
-    display: inline-block;
-    width: 100%;
-    height: 10%;
-   
-}
-
-.banner_img > img{
-    width: 100%;
-}
-
 a{
     text-decoration: none;
     color: white;
@@ -25,24 +14,28 @@ ul{
 
 .store{
     grid-area: store;
+    	font-weight: 600;
 }
 
 .store_name{
     grid-area: store_name;
+    	font-weight: 600;
 }
 
 .time{
     grid-area: time;
+    	font-weight: 600;
 }
 
 .store_time{
     grid-area: store_time;
+    	font-weight: 600;
 }
 
 .store_container{
-    padding-top: 12px;
+    padding-top: 12px;  
     padding-bottom: 12px;
-    margin-top: 30px;
+    margin-top: 90px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -72,7 +65,7 @@ ul{
     display: inline-block;
 }
 
-.category_box{
+.menu_box{
     width: 100%;
     height: 600px;
 	border-top: 2px solid #bcbcbc; 
@@ -123,6 +116,8 @@ input[type="radio"]:checked + label {
 						'basiccost_content img img'
 						'salecost_content img img';
  }
+ 
+
 
  .Menu_name_content{
 	border:2px solid gray;
@@ -208,9 +203,21 @@ textarea {
 
 
 #map{
-	width: 50%;
-	height: 500px;
-	margin : auto;
+	width: 100%;
+	height: 300px;
+}
+
+
+#store {
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+.storeli{
+	 list-style : none;
+	 display : inline-block;
 }
 
 

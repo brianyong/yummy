@@ -13,4 +13,12 @@
 		AND STORE_STATUS = 'Y'
 	</entry>
 
+	<entry key="storeViewAll">
+		SELECT STORE_NO, STORE_NM, STORE_IMG,CATEGORY_NO,
+		( SELECT COUNT(*) FROM STOREGOOD B
+		WHERE A.STORE_NO = B.STORE_NO) CNT
+		FROM STORE A
+		WHERE STORE_STATUS = 'Y'
+	</entry>
+
 </properties>

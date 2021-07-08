@@ -59,37 +59,56 @@ function getCategory(el){
 		dataType : "JSON",
 		success : function(list){
 			
-			console.log(list);
-			
-			//var storeCate = ${store.storeCate};
-			
-			
+			console.log(list);   
+			   
+
 				
+			//var store = contextPath + "store/store?type="+item.storeNo;
+			// 화면 초기화 
+			$(".Category_box").html("");
+			
 			$.each(list, function(index, item){
 				
-				// 화면 초기화 
-				$(".Category_box").html("");
+				var li = $("<li>").addClass("storeli");
+												
+			/*	var div = $("<div>").addClass("big").attr("onclick", "storeView("+item.storeNo+")");
+				var lImg = $("<div>").addClass("dimg");
+				var Img = $("<img>").addClass("img").attr("src",contextPath+item.storeImg);
+				var lName = $("<div>").addClass("storeName").text(item.storeName);
+				var like = $("<i>").addClass("fas").addClass("fa-heart");
+				var lGood = $("<div>").addClass("storeGood").text(item.goodCount);
 				
-				$.each(list, function(index, item){
-					
-					var li = $("<li>").addClass("storeli");
-													
-					var div = $("<div>").addClass("big").attr("onclick", "storeView("+item.storeNo+", this)");
-					var lImg = $("<div>").addClass("img");
-					var lName = $("<div>").addClass("storeName").text(item.storeName);
-					var lGood = $("<div>").addClass("storeGood").text(item.goodCount);
-					
-					// div 태그에 다 붙여줌.					
-					div.append(lImg).append(lName).append(lGood);
-					
-					li.append(div);
-					
-					$(".Category_box").append(li);
-				});
+				// div 태그에 다 붙여줌.					
+				div.append(lImg).append(Img).append(lName).append(like).insertBefore(lGood);
 				
+				li.append(div);*/
+				
+				var big = $("<div>").addClass("big").attr("onclick", "storeView("+item.storeNo+")");
+				var dimg = $("<div>").addClass("img");
+				var img = $("<img>").attr("src",contextPath+item.storeImg);
+				var content = $("<div>").addClass("content");
+				var storeName = $("<div>").addClass("storeName").text(item.storeName);
+				var storeGood = $("<div>").addClass("storeGood");
+				var storeheart = $("<div>").addClass("storeheart");
+				var good = $("<div>").addClass("good").text(item.goodCount);
+				var heart = $("<i>").addClass("fas").addClass("fa-heart");
+				
+				dimg.append(img);
+				
+				
+				storeheart.append(heart);
+				
+				storeGood.append(storeheart).append(good);
+
+				content.append(storeName).append(storeGood);
+				
+				big.append(dimg).append(content);
+				
+				li.append(big);
+				
+				$(".Category_box").append(li);
 			});
 				
-			
 			
 		},
 		error : function(){
@@ -100,16 +119,18 @@ function getCategory(el){
 
 
 
-function storeView(storeNo, el){
+
+
+function storeView(storeNo){
 	
 	console.log(storeNo);
 	console.log(contextPath);
 
 	var url = contextPath+"/store/store?storeNo="+storeNo;
 	location.href = url;
+
 	
 }
-
 
 
 
