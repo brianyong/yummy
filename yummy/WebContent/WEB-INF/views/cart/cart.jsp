@@ -15,22 +15,21 @@
    <!-- search.jsp 동적 include -->
    <jsp:include page="../common/search.jsp"/>
 
-
    <div class="container">
         <div class="content">
           <div class="sub-top">
-            <h1 class="page-title" id="store-name">${storeName}</h1>
+            <h1 class="page-title" id="store-name">${cartList[0].storeName}</h1>
             <br>
           </div>
           <c:set var="total" value="0"/>
 					<c:forEach items="${cartList}" var="cart">
           <div class="row row-title" id="box">
-            <div class="col box1"><p>${cart.menuName}</p>
+            <div class="col box1"><p><b>${cart.menuName}</b></p>
               <ul>
                 <li>가격 : ${cart.menuSaleCost}원</li>
                 <li>수량 : <input type="number" value="${cart.menuAmount}"></li>
               </ul>
-              <p class="totalPrice" name="menuTotal">총 금액 <strong>${cart.menuSaleCost * cart.menuAmount}</strong></p>
+              <p class="totalPrice" name="menuTotal">총 금액 <strong>${cart.menuSaleCost * cart.menuAmount}원</strong></p>
             </div>
          
             
