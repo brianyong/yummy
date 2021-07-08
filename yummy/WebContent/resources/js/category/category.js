@@ -70,18 +70,6 @@ function getCategory(el){
 			$.each(list, function(index, item){
 				
 				var li = $("<li>").addClass("storeli");
-												
-			/*	var div = $("<div>").addClass("big").attr("onclick", "storeView("+item.storeNo+")");
-				var lImg = $("<div>").addClass("dimg");
-				var Img = $("<img>").addClass("img").attr("src",contextPath+item.storeImg);
-				var lName = $("<div>").addClass("storeName").text(item.storeName);
-				var like = $("<i>").addClass("fas").addClass("fa-heart");
-				var lGood = $("<div>").addClass("storeGood").text(item.goodCount);
-				
-				// div 태그에 다 붙여줌.					
-				div.append(lImg).append(Img).append(lName).append(like).insertBefore(lGood);
-				
-				li.append(div);*/
 				
 				var big = $("<div>").addClass("big").attr("onclick", "storeView("+item.storeNo+")");
 				var dimg = $("<div>").addClass("img");
