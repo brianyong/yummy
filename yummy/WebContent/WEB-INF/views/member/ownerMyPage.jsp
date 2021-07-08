@@ -60,9 +60,8 @@
 					<div class="row mb-2 form-row">
 						<div class="col-md-0"></div>
 						<div class="col-md-4" id="storelogo">
-							<h5 id="name">
-								<%-- <img src="${contextPath}/${store.storeImg}" width="80%" height="80%"> --%>
-														
+							<h5 id="name" style="text-align: center;">
+								<img src="${contextPath}/${storeInfo.storeImg}" width="50%" height="50%">
 							</h5>
 						</div>
 					</div>
