@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
@@ -6,63 +7,53 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인</title>
-<link rel="stylesheet" href="${contextPath}/resources/css/member/login.css" type="text/css"/>
+<link rel="stylesheet"
+	href="${contextPath}/resources/css/member/login.css" type="text/css" />
 </head>
 <body>
 	<!-- header.jsp 동적 include -->
-	<jsp:include page="../common/header.jsp"/>
-	
+	<jsp:include page="../common/header.jsp" />
+
 	<div class="container">
-	    <ul class="Login_body">
-	        <form action="${contextPath}/member/login" method="POST" onsubmit="return loginValidate();">
-	            <li>
-	                <div class="Login_Title">
-	                    LOGIN
-	                </div>
-	            </li>
-	            <li>
-	                <div class="Login_box">
-	                    <ul class="Login_box_li">
-	                        <li>
-	                            <input type="text" name="memberId" id="memberId" placeholder="ID" value="${cookie.saveId.value}">
-	                        </li>
-	                        <li>
-	                            <div class="guide_text">ID를 입력해주세요</div>
-	                        </li>
-	                        <li>
-	                            <input type="password" name="memberPw" id="memberPw" placeholder="PASSWORD">
-	                        </li>
-	                        <li>
-	                            <div class="guide_text">비밀번호를 입력해주세요</div>
-	                        </li>
+		<ul class="Login_body">
+			<form action="${contextPath}/member/login" method="POST"
+				onsubmit="return loginValidate();">
+				<li>
+					<div class="Login_Title">LOGIN</div>
+				</li>
+				<div class="Login_box">
+					<ul class="Login_box_li">
+						<li><input type="text" name="memberId" id="memberId"
+							placeholder="ID" value="${cookie.saveId.value}"></li>
+						<li>
+							<div class="guide_text">ID를 입력해주세요</div>
+						</li>
+						<li><input type="password" name="memberPw" id="memberPw"
+							placeholder="PASSWORD"></li>
+						<li>
+							<div class="guide_text">비밀번호를 입력해주세요</div>
+						</li>
 
-							<%-- 이전에 저장해둔 아이디가 쿠키에 존재한다면 --%>
-							<c:if test="${ !empty cookie.saveId.value}">
-								<c:set var="checked" value="checked" />
-							</c:if>
-							
-							<li>
-								<input type="checkbox" name="saveId" id="saveId" ${checked}> 아이디 저장
-							</li>
-							<br>
+						<%-- 이전에 저장해둔 아이디가 쿠키에 존재한다면 --%>
+						<c:if test="${ !empty cookie.saveId.value}">
+							<c:set var="checked" value="checked" />
+						</c:if>
 
-							<li>
-	                            <button type="submit" id="btn_login">로그인</button>
-	                        </li>
-	                        <li>
-	                            <!-- <div class="lost_text">
-	                                	기억나지 않으신가요? <a href="">아이디/비밀번호 찾기</a>
-	                            </div> -->
-	                            
-	                        </li>
-	                    </ul>
-	                </div>
-	            </li>
-	        </form>
-	    </ul>
+						<li><input type="checkbox" name="saveId" id="saveId"
+							${checked}> 아이디 저장</li>
+						<br>
+
+						<li>
+							<button type="submit" id="btn_login">로그인</button>
+						</li>
+						
+					</ul>
+				</div>
+			</form>
+		</ul>
 	</div>
-	
-		<script>
+
+	<script>
 		
 		// 로그인 수행 시 아이디/비밀번호가 작성 되었는지 확인하는 유효성 검사
 		function loginValidate(){
@@ -98,11 +89,11 @@
 			}
 		}
 		</script>
-	
-	
-	
+
+
+
 	<!-- footer.jsp 동적 include -->
-	<jsp:include page="../common/footer.jsp"/>
+	<jsp:include page="../common/footer.jsp" />
 
 </body>
 </html>

@@ -61,7 +61,7 @@
 						<div class="col-md-0"></div>
 						<div class="col-md-4" id="storelogo">
 							<h5 id="name">
-								<img src="" width="80%" height="80%">
+								<img src="${contextPath}/${store.storeImg}" width="80%" height="80%">
 														
 							</h5>
 						</div>

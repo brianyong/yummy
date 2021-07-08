@@ -45,6 +45,24 @@ public class StoreService {
 		
 		return list;
 	}
+	
+	
+	/** 가게 정보 등록 Service
+	 * @param store
+	 * @param memberNo 
+	 * @return result;
+	 * @throws Exception
+	 */
+	public int Store(Store store, int memberNo) throws Exception{
+		
+	Connection conn = getConnection();
+		
+		int result = dao.StoreDAO(conn, store, memberNo);
+		
+		close(conn);
+		
+		return result;
+	}
 
 
 
