@@ -40,13 +40,23 @@ public class CategoryServlet extends HttpServlet {
 
 			CategoryService service = new CategoryService();
 
-			// String categoryNo = request.getParameter("categoryNo");
-			int categoryNo = request.getParameter("categoryNo") == null ? 1 : Integer.parseInt(request.getParameter("categoryNo"));
+			int categoryNo = Integer.parseInt(request.getParameter("categoryNo"));
+			//int categoryNo = request.getParameter("categoryNo") == null ? 1 : Integer.parseInt(request.getParameter("categoryNo"));
 
 			// System.out.println(categoryNo);
 			// 값 잘 가져오는 중 ...
-
-			List<Map<String, Object>> list = service.storeView(categoryNo);
+			
+			List<Map<String, Object>> list = null;
+			
+			if(categoryNo == 0) {
+				
+				list = service.storeViewAll();
+				
+			}else {
+				
+				list = service.storeView(categoryNo);
+			}
+			
 			
 			// JSON 데이터 반환하기
 			new Gson().toJson(list, response.getWriter());

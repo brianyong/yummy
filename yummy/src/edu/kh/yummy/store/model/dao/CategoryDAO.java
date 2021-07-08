@@ -77,4 +77,42 @@ public class CategoryDAO {
 			
 			return list;
 		}
+
+
+		/**가게 전체보기 DAO
+		 * @param conn
+		 * @param categoryNo
+		 * @return list
+		 * @throws Exception
+		 */
+		public List<Map<String, Object>> storeViewAll(Connection conn) throws Exception{
+			
+			List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+			
+			String sql = prop.getProperty("storeViewAll");
+			
+			try {
+				
+				stmt = conn.createStatement();
+				
+				rs = stmt.executeQuery(sql);
+						
+				while(rs.next()) {
+					Map<String, Object> map = new HashMap<String, Object>();
+					map.put("storeNo", rs.getInt(1));
+					map.put("storeName", rs.getString(2));
+					map.put("storeImg", rs.getString(3));
+					map.put("storeCate", rs.getString(4));
+					map.put("goodCount", rs.getString(5));
+					
+					list.add(map);
+				}
+				
+			} finally {
+				close(rs);
+				close(stmt);
+			}
+			
+			return list;
+		}
 }
