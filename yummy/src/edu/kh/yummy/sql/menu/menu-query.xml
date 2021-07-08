@@ -32,7 +32,7 @@
 <!-- 메뉴 등록 sql -->
 <entry key="insertMenu">
 INSERT INTO MENU
-VALUES(SEQ_SNO.NEXTVAL, ?, ?, ?, ? , (SELECT STORE_NO FROM STORE
+VALUES(SEQ_ANO.NEXTVAL, ?, ?, ?, ? , (SELECT STORE_NO FROM STORE
                                                     JOIN MEMBER USING(MEMBER_NO)
                                                     WHERE MEMBER_NO = ?),  DEFAULT)
 </entry>
