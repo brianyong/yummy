@@ -1,6 +1,8 @@
 package edu.kh.yummy.member.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import edu.kh.yummy.cart.model.vo.Cart;
 import edu.kh.yummy.member.model.service.MemberService;
 import edu.kh.yummy.member.model.vo.Member;
 
@@ -55,6 +58,8 @@ public class LoginServlet extends HttpServlet {
 				
 				// session에 로그인 정보 추가
 				session.setAttribute("loginMember", loginMember);
+				   List<Cart> cartList = new ArrayList<Cart>();
+		            session.setAttribute("cartList", cartList);
 				
 				// 일정 시간 후 세션 만료
 				// 30분 후
