@@ -272,35 +272,6 @@ public class OrdersDAO {
 		return result;
 	}
 
-	/*	*//**
-			 * 주문하기 DAO2
-			 * 
-			 * @param conn
-			 * @param orderNo
-			 * @param menuNo
-			 * @param menuAmount
-			 * @return
-			 * @throws Exception
-			 *//*
-				 * public int placeOrder2(Connection conn, int orderNo, int menuNo, int
-				 * menuAmount) throws Exception{
-				 * 
-				 * int result = 0;
-				 * 
-				 * String sql = prop.getProperty("placeOrder2"); try { pstmt =
-				 * conn.prepareStatement(sql);
-				 * 
-				 * pstmt.setInt(1, orderNo); pstmt.setInt(2, menuNo); pstmt.setInt(3,
-				 * menuAmount);
-				 * 
-				 * result = pstmt.executeUpdate();
-				 * 
-				 * } finally { close(pstmt);
-				 * 
-				 * } return result;
-				 * 
-				 * }
-				 */
 
 	/**
 	 * 주문하기 DAO2

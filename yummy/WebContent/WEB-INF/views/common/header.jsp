@@ -52,7 +52,7 @@
 									<a class="dropdown-item"
 										href="${contextPath}/notice/noticeList">공지사항</a> <a
 										class="dropdown-item" href="${contextPath}/faq/list">자주묻는질문</a>
-									<%-- <a class="dropdown-item" href="${contextPath}/review/list">리뷰게시판</a> --%>
+
 								</div>
 							</div>
 						</li>

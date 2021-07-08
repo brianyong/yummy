@@ -125,6 +125,8 @@ public class Faq2Service {
 			rollback(conn);
 		}
 		
+		close(conn);
+		
 		
 		return result;
 	}
